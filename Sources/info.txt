@@ -1,0 +1,4 @@
+Faire un fichier pour chaque logiciel ou outils utiliser et mettre les sources dedans
+
+example :
+.bend de blander dans le fichier blender.
