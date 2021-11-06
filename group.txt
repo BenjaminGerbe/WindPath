@@ -1,5 +1,5 @@
-Nom équipe 
+Equipe LAB
 
-nom 
-nom 
-nom
+Lorenzo DESISTO
+Alexis SONTOT
+Benjamin GERBE
