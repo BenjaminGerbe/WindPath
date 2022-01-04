@@ -53,6 +53,8 @@ public  class InputBoatScript : MonoBehaviour
     {
         if (Input.GetAxisRaw("Sail") > 0)
         {
+        
+            Debug.Log("yo");
             RT = true;
             return true;
         }
