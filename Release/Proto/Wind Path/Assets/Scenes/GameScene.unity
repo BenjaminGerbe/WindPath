@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 174674259}
   - component: {fileID: 174674258}
   - component: {fileID: 174674257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 206055839}
   - component: {fileID: 206055838}
   - component: {fileID: 206055837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 220999073}
   - component: {fileID: 220999072}
   - component: {fileID: 220999077}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 243296063}
   - component: {fileID: 243296062}
   - component: {fileID: 243296061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 274339d3f78721746bf1f81475a707b6, type: 2}
   m_TargetDisplay: 1
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 354778227}
   - component: {fileID: 354778226}
   - component: {fileID: 354778225}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 808309723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Environnement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 843652574}
   - component: {fileID: 843652573}
   - component: {fileID: 843652572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 971191756}
   - component: {fileID: 971191755}
   - component: {fileID: 971191754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 1031386811}
   - component: {fileID: 1031386813}
   - component: {fileID: 1031386812}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: BottomSea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 1234586601}
   - component: {fileID: 1234586600}
   - component: {fileID: 1234586599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,7 +1146,7 @@ GameObject:
   - component: {fileID: 1247568837}
   - component: {fileID: 1247568836}
   - component: {fileID: 1247568835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 1258478282}
   - component: {fileID: 1258478281}
   - component: {fileID: 1258478280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 1432500357}
   - component: {fileID: 1432500356}
   - component: {fileID: 1432500355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 1554974734}
   - component: {fileID: 1554974733}
   - component: {fileID: 1554974732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1524,7 +1524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658725505}
   - component: {fileID: 1658725506}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,7 +1605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1833624549}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Waters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1645,7 +1645,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c342c184a3fb7864bb01ecea12cc5f0d, type: 2}
     - target: {fileID: 1696562990377881288, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2830460324443482463, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
@@ -1665,7 +1665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6340529143345808230, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 191
+      value: 247
       objectReference: {fileID: 0}
     - target: {fileID: 6340529144605555312, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Name
@@ -1719,6 +1719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7824666689024028129, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f415e2e152c8d0a42bbfc149f31ca931, type: 2}
     - target: {fileID: 8807490386687655872, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
       value: 7
