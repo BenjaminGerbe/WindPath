@@ -14,10 +14,13 @@ public class BoatControlleurScript : MonoBehaviour
     public Transform Boat;
 
     public Rigidbody RB;
-
+    public InputBoatScript IBS;
+    
     [Header("Values")] 
     public float moveSpeed;
     public float torqueSpeed;
+    public float MaxVitesse;
+    public float MaxRotationVitesse;
 
     [Header("Animation")] 
     public AnimationCurve RotationAnimaiton; //  Rotation selon la vitesse de la rotation
@@ -30,6 +33,8 @@ public class BoatControlleurScript : MonoBehaviour
     private bool IsTurningRight;
 
     private float PourcentageRotation;
+    
+    
     
     // Start is called before the first frame update
     void Start()
@@ -45,20 +50,20 @@ public class BoatControlleurScript : MonoBehaviour
         IsTurningLeft = false;
         IsTurningRight = false;
             
-        if (Input.GetAxisRaw("Vertical") > 0)
+        if (IBS.isTurningRight())
         {
-            isAccelerate = true;
+            IsTurningRight = true;
         }
         
-        
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if (IBS.isTurningLeft())
         {
+          
             IsTurningLeft = true;
         }
         
-        if (Input.GetAxisRaw("Horizontal") > 0)
+        if (IBS.isAccelerate())
         {
-            IsTurningRight = true;
+             isAccelerate= true;
         }
     }
 
@@ -84,8 +89,9 @@ public class BoatControlleurScript : MonoBehaviour
             signed = -1;
         }
         
-        
-       
+        RB.velocity = Vector3.ClampMagnitude(RB.velocity, MaxVitesse);
+  
+
         
         PourcentageRotation = Mathf.Clamp01(   Mathf.Abs(RB.angularVelocity.y));
         
