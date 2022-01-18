@@ -22,10 +22,19 @@ public class CountTour : MonoBehaviour
             check = false;
             ActualTour++;
             Debug.Log(ActualTour);
+            if (ActualTour > nbTour)
+            {
+
+            }
         }
         if (other.name=="checkpoint")
         {
             check = true;
         }
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(300, 100, 400, 80), (ActualTour.ToString()));
     }
 }
