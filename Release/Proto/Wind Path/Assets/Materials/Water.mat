@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: 4800000, guid: 4b943d4ada03f694587f94016cf788d9, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,37 +19,60 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b46e95ef2565a80418e009f4d19aa5f8, type: 3}
-        m_Scale: {x: 15, y: 15}
-        m_Offset: {x: 0, y: 0}
-    - _ReflectionTex:
+    - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _TraceTexture:
-        m_Texture: {fileID: 8400000, guid: 274339d3f78721746bf1f81475a707b6, type: 2}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _WaterDis:
-        m_Texture: {fileID: 2800000, guid: 208ec551107fe334387dca54834f3cad, type: 3}
-        m_Scale: {x: 10, y: 10}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _DeppValue: 23.47
-    - _DepthValue: 23.07
-    - _Foam: 0.18
-    - _FoamCOF: 1.6
-    - _FoamLineMaxDistance: 0.12
-    - _FoamLineMinDistance: 0.11
-    - _MirrorValue: 8.04
-    - _WaveAmont: 1
-    - _WaveHeight: 0.15
-    - _WaveSpeed: 1
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.115
+    - _GlossyReflections: 1
+    - _Metallic: 1
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.25467247, g: 0.38464743, b: 0.9150943, a: 1}
-    - _DeepColor: {r: 0.70980394, g: 0.8117647, b: 0.83137256, a: 1}
-    - _FoamColor: {r: 0.7905838, g: 0.87610257, b: 0.8867924, a: 1}
-    - _FoamTint: {r: 0, g: 0, b: 0, a: 0}
-    - _SurfaceColor: {r: 0.6596209, g: 0.752584, b: 0.764151, a: 1}
+    - _Color: {r: 0.30210927, g: 0.3968302, b: 0.8773585, a: 1}
+    - _EmissionColor: {r: 0.5174541, g: 1.0142101, b: 4.1603312, a: 1}
   m_BuildTextureStacks: []
