@@ -1715,6 +1715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f711e942d8c2554fae6a445cdba74c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActualTour: 0
   nbTour: 5
   finish_line: {fileID: 2076466143}
 --- !u!1 &2076466141
