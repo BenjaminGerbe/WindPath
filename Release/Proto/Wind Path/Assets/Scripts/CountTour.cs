@@ -6,8 +6,8 @@ public class CountTour : MonoBehaviour
 {
 
     private int ActualTour = 0;
+    private bool check = true;
     public int nbTour;
-    public Collider finish_line;
 
     // Update is called once per frame
     void Update()
@@ -17,7 +17,15 @@ public class CountTour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ActualTour++;
-        Debug.Log(ActualTour);
+        if (other.name=="finish line" && check == true)
+        {
+            check = false;
+            ActualTour++;
+            Debug.Log(ActualTour);
+        }
+        if (other.name=="checkpoint")
+        {
+            check = true;
+        }
     }
 }
