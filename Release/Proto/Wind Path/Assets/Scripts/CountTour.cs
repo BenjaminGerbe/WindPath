@@ -36,7 +36,6 @@ public class CountTour : MonoBehaviour
         {
             check = false;
             ActualTour++;
-            Debug.Log(ActualTour);
             if (ActualTour == 1)
             {
                 StartTime = Time.time;
