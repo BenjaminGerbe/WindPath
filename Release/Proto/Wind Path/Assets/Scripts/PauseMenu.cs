@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     {
         if(pause)
         {
-            Style.fontSize = 25;
+            Style.fontSize = 40;
             GUI.Label(new Rect(Screen.width/2-60, Screen.height/8, 100, 40), "PAUSE",Style);
         }
         

@@ -11,6 +11,7 @@ public class CountTour : MonoBehaviour
     /// Utilisé pour : Passage des tours de circuit et temps de parcours global (UI intégré)
     /// </summary>
 
+    private GUIStyle Style = new GUIStyle();
     private float RaceTime;
     private string RealRaceTime;
     private float StartTime = 0;
@@ -56,12 +57,13 @@ public class CountTour : MonoBehaviour
         string tour = "";
         if (ActualTour > nbTour)
         {
-            tour = "finish";
+            tour = "FINISH";
         }
         else
         {
-            tour = ActualTour.ToString();
+            tour = ActualTour.ToString()+"/"+nbTour;
         }
-        GUI.Label(new Rect(300, 100, 400, 80), tour+"\n"+RealRaceTime);
+        Style.fontSize = 25;
+        GUI.Label(new Rect(Screen.width / 20 - 60, Screen.height / 810, 400, 80), tour+"\n"+RealRaceTime,Style);
     }
 }
