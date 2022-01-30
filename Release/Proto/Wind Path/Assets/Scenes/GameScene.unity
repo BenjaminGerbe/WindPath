@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!54 &132865050 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6340529144605555324, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+  m_PrefabInstance: {fileID: 6340529144002686485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &174674255
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +223,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174674255}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &180124422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180124423}
+  - component: {fileID: 180124424}
+  m_Layer: 0
+  m_Name: WindController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &180124423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180124422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &180124424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180124422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2de0cc15c42574296e835806522f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windStrength: 500
+  cdmax: 15
+  speedChange: 3
 --- !u!1 &206055835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,6 +1694,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c342c184a3fb7864bb01ecea12cc5f0d, type: 2}
+    - target: {fileID: 1627743462522381251, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: coeffWind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627743462522381251, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: speedWind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627743462522381251, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: windControl
+      value: 
+      objectReference: {fileID: 180124424}
+    - target: {fileID: 1627743462522381251, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: rigidbodyBoat
+      value: 
+      objectReference: {fileID: 132865050}
     - target: {fileID: 1696562990377881288, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1651,6 +1718,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2830460324443482463, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2853296767578438583, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1658,6 +1729,10 @@ PrefabInstance:
     - target: {fileID: 4978171361156570091, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978171361156570091, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6340529143345808228, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
@@ -1718,6 +1793,14 @@ PrefabInstance:
     - target: {fileID: 6340529144605555315, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340529144605555325, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: MaxVitesse
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340529144936347904, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7824666689024028129, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Materials.Array.data[0]
