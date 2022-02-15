@@ -1,7 +1,8 @@
-using System.Linq;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,12 +11,8 @@ public class PauseMenu : MonoBehaviour
     /// Utilisé pour : gestion de la pause
     /// </summary>
     private bool pause = false;
-    private GUIStyle Style = new GUIStyle();
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject pauseMenu;
+   
 
     // Update is called once per frame
     void Update()
@@ -27,21 +24,19 @@ public class PauseMenu : MonoBehaviour
             if (pause)
             {
                 Time.timeScale = 0f;
+                pauseMenu.SetActive(true);
             }
             else
             {
                 Time.timeScale = 1.0f;
+                pauseMenu.SetActive(false);
             }
         }
     }
 
-    void OnGUI()
+    public void QuitRace()
     {
-        if(pause)
-        {
-            Style.fontSize = 40;
-            GUI.Label(new Rect(Screen.width/2-60, Screen.height/8, 100, 40), "PAUSE",Style);
-        }
-        
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(0);
     }
 }
