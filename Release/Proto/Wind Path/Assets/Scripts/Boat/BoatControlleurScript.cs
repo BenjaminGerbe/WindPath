@@ -10,7 +10,7 @@ public class BoatControlleurScript : MonoBehaviour
     /// Utilisé pour : Déplacer le bateau
     /// </summary>
     /// 
-    [Header("Conpenents")] 
+    [Header("Components")] 
     public Transform Boat;
 
     public Rigidbody RB;
@@ -74,11 +74,11 @@ public class BoatControlleurScript : MonoBehaviour
         {
             RB.velocity += Boat.transform.forward * moveSpeed;
         }
-        if (IsTurningLeft && transform.InverseTransformDirection(RB.velocity).z > 0 )
+        if (IsTurningLeft && Mathf.Abs(transform.InverseTransformDirection(RB.velocity).z) > 0 )
         {
             RB.AddTorque(Boat.transform.up * -torqueSpeed, ForceMode.Acceleration);
         }
-        if (IsTurningRight  && transform.InverseTransformDirection(RB.velocity).z > 0 )
+        if (IsTurningRight  && Mathf.Abs(transform.InverseTransformDirection(RB.velocity).z) > 0 )
         {
             RB.AddTorque(Boat.transform.up * torqueSpeed, ForceMode.Acceleration);
         }
