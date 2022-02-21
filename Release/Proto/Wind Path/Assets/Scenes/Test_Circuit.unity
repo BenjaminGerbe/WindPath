@@ -1730,5 +1730,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8262272590777468676, guid: 16ddf7bad59887e48963970716fb5038, type: 3}
+      propertyPath: m_Name
+      value: Pause Menu Screen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ddf7bad59887e48963970716fb5038, type: 3}

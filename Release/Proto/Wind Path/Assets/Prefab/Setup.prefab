@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 8262272590777468679}
   - component: {fileID: 8262272590777468678}
   m_Layer: 5
-  m_Name: 'Canvas '
+  m_Name: Pause Menu Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
