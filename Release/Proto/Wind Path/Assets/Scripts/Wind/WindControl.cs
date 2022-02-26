@@ -6,7 +6,7 @@ public class WindControl : MonoBehaviour
 {
     /// <summary>
     /// Script fait par SONTOT Alexis 
-    /// Utilisé pour : Contrôler le vent
+    /// Utilisï¿½ pour : Contrï¿½ler le vent
     /// </summary>
     // Start is called before the first frame update
 
@@ -23,10 +23,12 @@ public class WindControl : MonoBehaviour
     public int cdmax;
     public float speedChange;
 
-    private void OnDrawGizmos()
+    public Transform DebbugerTransform;
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(this.transform.position, new Vector3(windVector.x, 0, windVector.y) * windStrength);
+        Gizmos.DrawRay(DebbugerTransform.position, new Vector3(windVector.x, 0, windVector.y)  * 10);
     }
     void Start()
     {

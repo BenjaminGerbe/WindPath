@@ -13,14 +13,14 @@ public  class InputBoatScript : MonoBehaviour
     private bool RT = false;
     public virtual bool isTurningRight()
     {
-        if (Input.GetAxisRaw("Horizontal") > 0 && !RT)  return  true;
+        if (Input.GetAxisRaw("Horizontal") > 0 )  return  true;
         return false;
     }
     
     public virtual bool isTurningLeft()
     {
    
-        if (Input.GetAxisRaw("Horizontal") < 0 && !RT )  return  true;
+        if (Input.GetAxisRaw("Horizontal") < 0  )  return  true;
         
      
         return false;
@@ -28,7 +28,7 @@ public  class InputBoatScript : MonoBehaviour
     
     public virtual bool isAccelerate()
     {
-        if (Input.GetAxisRaw("Vertical") > 0 && !RT)  return  true;
+        if (Input.GetAxisRaw("Vertical") > 0 )  return  true;
         return false;
     }
     
