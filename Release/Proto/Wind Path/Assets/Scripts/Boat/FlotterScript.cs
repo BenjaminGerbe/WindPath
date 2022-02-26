@@ -25,6 +25,8 @@ public class FlotterScript : MonoBehaviour
       
     }
     
+    
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -34,21 +36,14 @@ public class FlotterScript : MonoBehaviour
 
         RaycastHit hit;
         Ray r = new Ray(new Vector3(Flotteur.position.x, Flotteur.position.y + 10, Flotteur.position.z),Vector3.down);
-
-        Debug.DrawRay(new Vector3(Flotteur.position.x, Flotteur.position.y + 10, Flotteur.position.z),Vector3.down * 50f);
         
         
         if (Physics.Raycast(r,out hit,50f,WaterMask))
         {
-            Debug.Log("hallo");
+            
             value = hit.point.y;
         }
-
-
-        Debug.Log(value);
         
-        
-
          if (Flotteur.position.y < 50)
          {
              RB.AddForce(new Vector3(0,-Flotteur.position.y * 100,0));
