@@ -51,7 +51,7 @@ public class ArrowScript : MonoBehaviour
     
     public void aligne(SailControlleurScript item)
     {
-        Debug.Log("SailControlleurScript");
+      
         SailControlleurScript V = MBControler as SailControlleurScript;
     
         

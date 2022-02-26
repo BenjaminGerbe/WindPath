@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8262272589441981371}
   - component: {fileID: 8262272589441981349}
   - component: {fileID: 8262272589441981348}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8262272589530776950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Setup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8262272590024950474}
   - component: {fileID: 8262272590024950517}
   - component: {fileID: 8262272590024950475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: finish line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8262272590035017657}
   - component: {fileID: 8262272590035017659}
   - component: {fileID: 8262272590035017658}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 8262272590471584853}
   - component: {fileID: 8262272590471584852}
   - component: {fileID: 8262272590471584811}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 8262272590733865040}
   - component: {fileID: 8262272590733865047}
   - component: {fileID: 8262272590733865046}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 8262272590777468672}
   - component: {fileID: 8262272590777468679}
   - component: {fileID: 8262272590777468678}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Pause Menu Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 8262272590794528076}
   - component: {fileID: 8262272590794528078}
   - component: {fileID: 8262272590794528077}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 8262272591178256816}
   - component: {fileID: 8262272591178256819}
   - component: {fileID: 8262272591178256817}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

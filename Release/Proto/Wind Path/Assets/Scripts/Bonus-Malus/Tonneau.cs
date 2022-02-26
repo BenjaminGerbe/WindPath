@@ -15,12 +15,14 @@ public class Tonneau : MonoBehaviour
     [Header("Values")] 
     public float Timer;
 
+    public BoatControlleurScript BCS;
     public float Speed;
-    
+    public float maxSpeed;
     
     private bool starteffect;
     private float Counter;
     private Rigidbody RB;
+    private float oldmaxSpeed;
     private void OnTriggerEnter(Collider other)
     {
         starteffect = true;
@@ -34,6 +36,7 @@ public class Tonneau : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        oldmaxSpeed = BCS.MaxVitesse;
         this.GetComponent<Collider>().enabled = false;
 
     }
@@ -51,23 +54,26 @@ public class Tonneau : MonoBehaviour
     }
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (starteffect)
         {
-            Debug.Log("salut");
-            Counter -= Time.deltaTime;
+           
+            Counter -= Time.fixedDeltaTime;
             
             RB.AddForce(RB.transform.forward * Speed, ForceMode.Acceleration );
-            
+
+            BCS.MaxVitesse = maxSpeed;
             
             if (Counter < 0)
             {
-                
+                BCS.MaxVitesse = oldmaxSpeed;
                 starteffect = false;
                 Destroy(this.gameObject);
             }
             
         }
+        
+        
     }
 }

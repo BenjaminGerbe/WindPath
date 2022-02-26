@@ -48,8 +48,8 @@ Material:
     - _WaveSpeed: 1
     m_Colors:
     - _Color: {r: 0.25467247, g: 0.38464743, b: 0.9150943, a: 1}
-    - _DeepColor: {r: 0.70980394, g: 0.8117647, b: 0.83137256, a: 1}
+    - _DeepColor: {r: 0.7893378, g: 0.9052154, b: 0.9245283, a: 1}
     - _FoamColor: {r: 0.7905838, g: 0.87610257, b: 0.8867924, a: 1}
     - _FoamTint: {r: 0, g: 0, b: 0, a: 0}
-    - _SurfaceColor: {r: 0.6596209, g: 0.752584, b: 0.764151, a: 1}
+    - _SurfaceColor: {r: 0.74875396, g: 0.8663423, b: 0.8867924, a: 1}
   m_BuildTextureStacks: []

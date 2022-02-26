@@ -12,7 +12,8 @@ public class BoatControlleurScript : MonoBehaviour
     /// 
     [Header("Components")] 
     public Transform Boat;
-
+    public Transform modelBoat;
+    
     public Rigidbody RB;
     public InputBoatScript IBS;
     
@@ -67,6 +68,8 @@ public class BoatControlleurScript : MonoBehaviour
         }
     }
 
+   
+    
     // Update is called once per frame
     void FixedUpdate()
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class BoatWindManager : MonoBehaviour
@@ -16,20 +17,11 @@ public class BoatWindManager : MonoBehaviour
     public Rigidbody rigidbodyBoat;
     public SailControlleurScript SailTransform;
     
+    
     [Header("Values")]
     [Range(0f,1f)]
     public float coeffWind =1;
 
-    public Vector3 LocalVectorForwardSail;
-
-    
-    
-
-    private void OnDrawGizmosSelected()
-    {
-        
-
-    }
 
     void Start()
     {
@@ -41,7 +33,7 @@ public class BoatWindManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
      
@@ -51,11 +43,11 @@ public class BoatWindManager : MonoBehaviour
         float val = angle / 180f;
         float speed = Mathf.Lerp(1f,0,val);
         
-        Debug.Log(speed);
         Vector3 windVector = (SailTransform.AxeSail().normalized  + windControl.GetVectorWind().normalized).normalized;
         
-        rigidbodyBoat.velocity += windVector*coeffWind * speed * windControl.windStrength;
-
+        rigidbodyBoat.AddForce(  windVector*coeffWind * speed * windControl.windStrength,ForceMode.Acceleration) ;
+        
+        
 
     }
 }

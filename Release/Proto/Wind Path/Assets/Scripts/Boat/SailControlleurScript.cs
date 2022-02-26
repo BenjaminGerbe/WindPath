@@ -48,12 +48,19 @@ public class SailControlleurScript : MonoBehaviour
         
         return Angle;
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-     
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawRay(this.transform.position, SAIL.transform.parent.up * 500);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        
+        
         Angle = calculangle();
         
         if (Angle <= 90)
@@ -61,40 +68,32 @@ public class SailControlleurScript : MonoBehaviour
             oldRotate = SAIL.transform.rotation;
         }
         
-      
-        
-        if (IBS.isRT() )
+        if ( IBS.isSailTurningRight() > 0)
         {
-            if (IBS.sailIsLeft())
-            {
-                SAIL.transform.Rotate(Vector3.up,-RotateSpeed);
-                
-            }
+            SAIL.transform.RotateAround(SAIL.transform.position,SAIL.transform.up,-RotateSpeed * Time.fixedDeltaTime * IBS.isSailTurningRight());
+
             
-            if (IBS.sailIsRight())
-            {
-                SAIL.transform.Rotate(Vector3.up,RotateSpeed);
-            }
-            
+
         }
         
+   
+        
+        if ( IBS.isSailTurningLeft() > 0)
+        {
+            SAIL.transform.RotateAround(SAIL.transform.position,SAIL.transform.up,RotateSpeed * Time.fixedDeltaTime );
+        
+        }
+
+      
+        
         Angle = calculangle();
-        
-        
+
         if (Angle > 90)
         {
             SAIL.transform.rotation = oldRotate;
         }
-
-    
-
-
-
-
-    }
-    
-    void FixedUpdate()
-    {
         
+
     }
+    
 }

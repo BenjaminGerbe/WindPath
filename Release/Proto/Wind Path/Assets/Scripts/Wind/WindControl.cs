@@ -22,14 +22,7 @@ public class WindControl : MonoBehaviour
     public float windStrength=1;
     public int cdmax;
     public float speedChange;
-
-    public Transform DebbugerTransform;
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(DebbugerTransform.position, new Vector3(windVector.x, 0, windVector.y)  * 10);
-    }
+    
     void Start()
     {
         windVector = new Vector2(Random.Range(-1f,1f), Random.Range(-1f, 1f)) ;

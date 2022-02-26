@@ -30,6 +30,6 @@ Material:
     - _V1: 0.261
     - _V2: 0.554
     m_Colors:
-    - _Couleur: {r: 0.5566038, g: 0.48571557, b: 0.48571557, a: 1}
-    - _Couleur2: {r: 1, g: 1, b: 1, a: 1}
+    - _Couleur: {r: 0.7104397, g: 0.73259985, b: 0.9716981, a: 1}
+    - _Couleur2: {r: 1, g: 0.9575472, b: 0.9966096, a: 1}
   m_BuildTextureStacks: []
