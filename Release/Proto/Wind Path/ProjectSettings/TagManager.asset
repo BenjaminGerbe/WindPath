@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Environnement
+  - Trace
   - Water
   - UI
-  - Trace
+  - Environnement
   - Boat
-  - 
-  - 
+  - BonusMalus
+  - CircuitManager
   - 
   - 
   - 

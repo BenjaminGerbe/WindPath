@@ -90,7 +90,6 @@ Shader "Unlit/WaterShader"
            float4 _DeepColor;
            float4 _SurfaceColor;
            float _DepthValue;
-           sampler2D _ReflectionTex;
             sampler2D _WaterDis;
            float4 _WaterDis_ST;
            float _Foam;
@@ -132,7 +131,7 @@ Shader "Unlit/WaterShader"
                 
                 float3 dis = tex2D(_WaterDis, i.uv * _WaterDis_ST.xy + _WaterDis_ST.zw + float2(1,1)*_Time.x);
                 float3 tex = tex2D(_MainTex, i.uv * _MainTex_ST.xy + _MainTex_ST.zw + (dis.x - dis.y + (trace3.x)*2)/20 );
-                float3 relf = tex2Dproj(_ReflectionTex, UNITY_PROJ_COORD(i.screenuv + dis.x - dis.y));
+           
              
               float4 trace = tex2D(_TraceTexture, i.uv + (dis.x - dis.y)/500 ).b;
                 
@@ -159,8 +158,7 @@ Shader "Unlit/WaterShader"
                 
                 trace = float4(trace.xxx,0) * _FoamColor;
                 col += trace;
-           
-              col += float4(relf.xyz/10,0);
+                
                 
                 return col;
             }
