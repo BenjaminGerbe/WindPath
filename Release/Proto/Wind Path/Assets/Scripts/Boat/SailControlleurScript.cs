@@ -51,9 +51,7 @@ public class SailControlleurScript : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawRay(this.transform.position, SAIL.transform.parent.up * 500);
+      
     }
 
     // Update is called once per frame
