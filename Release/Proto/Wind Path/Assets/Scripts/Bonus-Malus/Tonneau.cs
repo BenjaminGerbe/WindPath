@@ -17,12 +17,11 @@ public class Tonneau : MonoBehaviour
 
     public BoatControlleurScript BCS;
     public float Speed;
-    public float maxSpeed;
-    
+
     private bool starteffect;
     private float Counter;
     private Rigidbody RB;
-    private float oldmaxSpeed;
+
 
     
     private void OnTriggerEnter(Collider other)
@@ -50,7 +49,7 @@ public class Tonneau : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        oldmaxSpeed = BCS.MaxVitesse;
+    
 
         Counter = Timer;
     
@@ -66,12 +65,12 @@ public class Tonneau : MonoBehaviour
             Counter -= Time.fixedDeltaTime;
             
             RB.AddForce(RB.transform.forward * Speed, ForceMode.Acceleration );
-            BCS.MaxVitesse = maxSpeed;
+            
             
             if (Counter < 0)
             {
                 
-                BCS.MaxVitesse = oldmaxSpeed;
+             
                
                 starteffect = false;
                 Destroy(this.gameObject);
