@@ -2877,6 +2877,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5991824140167173734, guid: dfe96a6479513704fb62ba6ae7f280f8, type: 3}
+      propertyPath: windStrength
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5991824140167173735, guid: dfe96a6479513704fb62ba6ae7f280f8, type: 3}
       propertyPath: m_Name
       value: WindController
