@@ -16,7 +16,7 @@ public class BoatWindManager : MonoBehaviour
     public WindControl windControl;
     public Rigidbody rigidbodyBoat;
     public SailControlleurScript SailTransform;
-    
+    public BoatControlleurScript BCS;
     
     [Header("Values")]
     [Range(0f,1f)]
@@ -44,7 +44,7 @@ public class BoatWindManager : MonoBehaviour
         float speed = Mathf.Lerp(1f,0,val);
         
         Vector3 windVector = (SailTransform.AxeSail().normalized  + windControl.GetVectorWind().normalized).normalized;
-        
+      
         rigidbodyBoat.AddForce(  windVector*coeffWind * speed * windControl.windStrength,ForceMode.Acceleration) ;
         
         
