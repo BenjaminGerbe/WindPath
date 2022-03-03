@@ -8,7 +8,7 @@ public class CountTour : MonoBehaviour
 {
     /// <summary>
     /// Script fait par: Julien
-    /// Utilisé pour : Passage des tours de circuit et temps de parcours global (UI intégré)
+    /// UtilisÃ© pour : Passage des tours de circuit et temps de parcours global (UI intÃ©grÃ©)
     /// </summary>
 
     private GUIStyle Style = new GUIStyle();
