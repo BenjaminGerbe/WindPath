@@ -17,12 +17,15 @@ public class CountTour : MonoBehaviour
     private float StartTime = 0;
     private int ActualTour = 0;
     private bool[] allCheck;
-
-    public int nbTour;
-    public Collider[] Checkpoint;
+    private int nbTour;
+    private Collider[] Checkpoint;
 
     void Start()
     {
+        GameObject Gestion = GameObject.Find("RaceGestion");
+        RaceGestionScript s = Gestion.GetComponent<RaceGestionScript>();
+        nbTour = s.nbTour;
+        Checkpoint = s.Checkpoint;
         allCheck = new bool[Checkpoint.Length];
         for (int i = 0; i < allCheck.Length;i++)
         {
