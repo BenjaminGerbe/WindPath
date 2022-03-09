@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &9173546518063236646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157397129871764328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f6884c742a38b4ea5a742f8ed21702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MBControler: {fileID: 5282568115632904360}
+  AlignItem: {fileID: 3105000719497906737}
 --- !u!1 &1258912469184196941
 GameObject:
   m_ObjectHideFlags: 0
@@ -4858,20 +4872,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MBControler: {fileID: 0}
   AlignItem: {fileID: 7526415765522328812}
---- !u!114 &9173546518063236646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157397129871764328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f6884c742a38b4ea5a742f8ed21702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MBControler: {fileID: 5282568115632904360}
-  AlignItem: {fileID: 3105000719497906737}
 --- !u!1 &2263030751504217179
 GameObject:
   m_ObjectHideFlags: 0
@@ -5217,7 +5217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6340529144605555315
 Transform:
   m_ObjectHideFlags: 0
@@ -5250,7 +5250,7 @@ CapsuleCollider:
   m_Radius: 1.23
   m_Height: 4.11
   m_Direction: 2
-  m_Center: {x: -0.36, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &6340529144605555326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5296,7 +5296,7 @@ MonoBehaviour:
   modelBoat: {fileID: 6340529144936347907}
   RB: {fileID: 6340529144605555324}
   IBS: {fileID: 6340529144605555314}
-  moveSpeed: 0.45
+  moveSpeed: 0.65
   torqueSpeed: 2.25
   MaxVitesse: 40
   MaxRotationVitesse: 60
@@ -5386,8 +5386,8 @@ MonoBehaviour:
   windControl: {fileID: 0}
   rigidbodyBoat: {fileID: 6340529144605555324}
   SailTransform: {fileID: 5282568115632904360}
-  BCS: {fileID: 0}
-  coeffWind: 1
+  BCS: {fileID: 6340529144605555325}
+  coeffWind: 0.5
   WindInpact:
     serializedVersion: 2
     m_Curve:
@@ -5454,6 +5454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbTour: 5
+  Checkpoint: []
 --- !u!1 &6340529144936347904
 GameObject:
   m_ObjectHideFlags: 0
