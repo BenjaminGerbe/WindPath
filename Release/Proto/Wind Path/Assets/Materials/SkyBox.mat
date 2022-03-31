@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _Threshold: 0.3
+    - _Threshold: 0.37
     m_Colors:
     - _BottomColor: {r: 1, g: 1, b: 1, a: 1}
     - _TopColor: {r: 0.3537736, g: 0.6715417, b: 1, a: 1}

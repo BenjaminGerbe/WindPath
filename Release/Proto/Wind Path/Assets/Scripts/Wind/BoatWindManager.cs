@@ -59,7 +59,7 @@ public class BoatWindManager : MonoBehaviour
         
         boatDirection = (SailTransform.AxeSail().normalized + windControl.GetVectorWind().normalized).normalized;
       
-        rigidbodyBoat.AddForce(  boatDirection*coeffWind*speed* windControl.windStrength,ForceMode.Acceleration) ;
+        rigidbodyBoat.AddForce(  boatDirection*speed* (windControl.windStrength*coeffWind) ,ForceMode.Acceleration) ;
         
         
 
