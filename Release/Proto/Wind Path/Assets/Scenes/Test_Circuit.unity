@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 980102801}
   - component: {fileID: 980102800}
   m_Layer: 9
-  m_Name: checkpoint (1)
+  m_Name: checkpoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3775,6 +3775,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 43879120, guid: 16ddf7bad59887e48963970716fb5038, type: 3}
+      propertyPath: Checkpoint.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 43879120, guid: 16ddf7bad59887e48963970716fb5038, type: 3}
+      propertyPath: Checkpoint.Array.data[2]
+      value: 
+      objectReference: {fileID: 980102800}
     - target: {fileID: 8262272589530776949, guid: 16ddf7bad59887e48963970716fb5038, type: 3}
       propertyPath: m_Name
       value: Setup
