@@ -18,15 +18,17 @@ public class CountTour : MonoBehaviour
     private int ActualTour = 0;
     private bool[] allCheck;
     private int nbTour;
-    private Collider[] Checkpoint;
+    private Collider[] checkpoint;
+    private GameObject Gestion;
+    private RaceGestionScript s;
 
     void Start()
     {
-        GameObject Gestion = GameObject.Find("RaceGestion");
-        RaceGestionScript s = Gestion.GetComponent<RaceGestionScript>();
+        Gestion = GameObject.Find("RaceGestion");
+        s = Gestion.GetComponent<RaceGestionScript>();
         nbTour = s.nbTour;
-        Checkpoint = s.Checkpoint;
-        allCheck = new bool[Checkpoint.Length];
+        checkpoint = s.checkpoint;
+        allCheck = new bool[checkpoint.Length];
         for (int i = 0; i < allCheck.Length;i++)
         {
             allCheck[i] = true;
@@ -59,20 +61,20 @@ public class CountTour : MonoBehaviour
             } 
             if (ActualTour > nbTour)
             {
-                
+                s.setFinish(gameObject);
             }
         }
         else
         {
             int i;
-            for (i = 0; i < Checkpoint.Length; i++)
+            for (i = 0; i < checkpoint.Length; i++)
             {
-                if (other.name == Checkpoint[i].name)
+                if (other.name == checkpoint[i].name)
                 {
                     break;
                 }
             }
-            if (i >= 0 && i < Checkpoint.Length)
+            if (i >= 0 && i < checkpoint.Length)
             {
                 Console.WriteLine(i);
                 setTrue(i);
