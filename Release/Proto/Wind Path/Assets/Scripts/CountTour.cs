@@ -17,11 +17,28 @@ public class CountTour : MonoBehaviour
     private float StartTime = 0;
     private int ActualTour = 0;
     private bool[] allCheck;
-
+    private bool finish = false;
+    
     public int nbTour;
     public Collider[] Checkpoint;
 
+    public bool isFinish()
+    {
+        return finish;
+    }
 
+    public string getTime()
+    {
+        return this.RealRaceTime;
+    }
+    
+
+    
+    public int getTour()
+    {
+        return this.ActualTour;
+    }
+    
     public float getCurrentTour()
     {
       
@@ -30,26 +47,22 @@ public class CountTour : MonoBehaviour
     
     void Start()
     {
+
         allCheck = new bool[Checkpoint.Length];
+      
         for (int i = 0; i < allCheck.Length;i++)
         {
+            
             allCheck[i] = true;
         }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (StartTime != 0 && ActualTour <= nbTour)
-        {
-            RaceTime = Time.time - StartTime;
-            TimeSpan t = TimeSpan.FromSeconds(RaceTime);
-            RealRaceTime = t.ToString(@"mm\:ss\:fff");
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
+        
+     
         if (other.name == "finish line" && allTrue())
         {
             for (int i = 0; i < allCheck.Length; i++)
@@ -61,16 +74,30 @@ public class CountTour : MonoBehaviour
             {
                 StartTime = Time.time;
             } 
-            if (ActualTour > nbTour)
+            if (ActualTour > nbTour && !finish)
             {
+                finish = true;
+                if (GetComponent<InputBoatScript>())
+                {
+                    Debug.Log("finish");
+                    GetComponent<InputBoatScript>().enabled = false;
+                    IABoatScript IBS = this.gameObject.AddComponent<IABoatScript>();
+                    IBS.WC = GameObject.FindObjectOfType<WindControl>();
+                    IBS.MIS = GameObject.FindObjectOfType<MilesStoneIAScript>();
+                    BoatControlleurScript BS = GetComponent<BoatControlleurScript>();
+                    BS.IBS = IBS;
+                }
                 
+
             }
         }
-        else
+        else if (other.CompareTag("Checkpoint"))
         {
             int i;
+    
             for (i = 0; i < Checkpoint.Length; i++)
             {
+                
                 if (other.name == Checkpoint[i].name)
                 {
                     break;
@@ -78,7 +105,7 @@ public class CountTour : MonoBehaviour
             }
             if (i >= 0 && i < Checkpoint.Length)
             {
-                Console.WriteLine(i);
+                
                 setTrue(i);
             }
            
@@ -97,7 +124,7 @@ public class CountTour : MonoBehaviour
             tour = ActualTour.ToString()+"/"+nbTour;
         }
         Style.fontSize = 25;
-        GUI.Label(new Rect(Screen.width / 20 - 60, Screen.height / 810, 400, 80), tour+"\n"+RealRaceTime,Style);
+       // GUI.Label(new Rect(Screen.width / 20 - 60, Screen.height / 810, 400, 80), tour+"\n"+RealRaceTime,Style);
     }
 
     private void setTrue(int i)

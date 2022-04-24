@@ -66,7 +66,7 @@ public class Booster : MonoBehaviour
             {
                 this.transform.parent.GetComponent<TonneauSpawnerScript>().Spawn();
                 starteffect = false;
-                //Destroy(this.gameObject);
+                Destroy(this.gameObject);
             }
             
         }

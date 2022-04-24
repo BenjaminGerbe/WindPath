@@ -15,11 +15,9 @@ public class TonneauSpawnerScript : MonoBehaviour
 
     public float Timer = 10f;
     
-    private bool spawn = true;
+    private bool spawn = false;
     private float counter;
-
-    private bool detect = false;
-
+    
     
     public void Spawn()
     {
@@ -33,7 +31,9 @@ public class TonneauSpawnerScript : MonoBehaviour
         counter = Timer;
         GameObject go = Instantiate(Tonneau,this.transform.position,Quaternion.identity);
         go.transform.SetParent(this.transform);
+   
        
+        
     }
 
     // Update is called once per frame

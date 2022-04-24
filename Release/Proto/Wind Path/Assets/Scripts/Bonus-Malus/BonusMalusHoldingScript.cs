@@ -11,7 +11,7 @@ public class BonusMalusHoldingScript : MonoBehaviour
     
     
     public BonusMangerScript BMS;
-    
+
     private UnityEvent effect;
     private bool StartEffect;
     

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tonneau
   - Boat
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -48,8 +48,10 @@ public class WindBonus : MonoBehaviour
         
         if (starteffect)
         {
-            WC.SetVectorWind(new Vector3(1,0,1));
+            this.transform.parent.GetComponent<TonneauSpawnerScript>().Spawn();
+            WC.SetVectorWind(RB.transform.forward);
             starteffect = false;
+            Destroy(this.gameObject);
         }
         
     }
