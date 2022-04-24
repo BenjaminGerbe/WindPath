@@ -17,10 +17,17 @@ public class CountTour : MonoBehaviour
     private float StartTime = 0;
     private int ActualTour = 0;
     private bool[] allCheck;
+<<<<<<< HEAD
     private bool finish = false;
     
     public int nbTour;
     public Collider[] Checkpoint;
+=======
+    private int nbTour;
+    private Collider[] checkpoint;
+    private GameObject Gestion;
+    private RaceGestionScript s;
+>>>>>>> 4ca2c9e8372e4635e6465440fb6f82bedc1eaa60
 
     public bool isFinish()
     {
@@ -47,9 +54,17 @@ public class CountTour : MonoBehaviour
     
     void Start()
     {
+<<<<<<< HEAD
 
         allCheck = new bool[Checkpoint.Length];
       
+=======
+        Gestion = GameObject.Find("RaceGestion");
+        s = Gestion.GetComponent<RaceGestionScript>();
+        nbTour = s.nbTour;
+        checkpoint = s.checkpoint;
+        allCheck = new bool[checkpoint.Length];
+>>>>>>> 4ca2c9e8372e4635e6465440fb6f82bedc1eaa60
         for (int i = 0; i < allCheck.Length;i++)
         {
             
@@ -76,6 +91,7 @@ public class CountTour : MonoBehaviour
             } 
             if (ActualTour > nbTour && !finish)
             {
+<<<<<<< HEAD
                 finish = true;
                 if (GetComponent<InputBoatScript>())
                 {
@@ -89,21 +105,30 @@ public class CountTour : MonoBehaviour
                 }
                 
 
+=======
+                s.setFinish(gameObject);
+>>>>>>> 4ca2c9e8372e4635e6465440fb6f82bedc1eaa60
             }
         }
         else if (other.CompareTag("Checkpoint"))
         {
             int i;
+<<<<<<< HEAD
     
             for (i = 0; i < Checkpoint.Length; i++)
             {
                 
                 if (other.name == Checkpoint[i].name)
+=======
+            for (i = 0; i < checkpoint.Length; i++)
+            {
+                if (other.name == checkpoint[i].name)
+>>>>>>> 4ca2c9e8372e4635e6465440fb6f82bedc1eaa60
                 {
                     break;
                 }
             }
-            if (i >= 0 && i < Checkpoint.Length)
+            if (i >= 0 && i < checkpoint.Length)
             {
                 
                 setTrue(i);
