@@ -39,7 +39,7 @@ public class DynamicFov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(transform.InverseTransformDirection(RB.velocity).z);
+     
         
         float pourcentage = Mathf.InverseLerp(minVitesse, maxVitese,
             Mathf.Abs(transform.InverseTransformDirection(RB.velocity).z));

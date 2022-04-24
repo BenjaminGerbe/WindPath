@@ -32,6 +32,7 @@ public class SailControlleurScript : MonoBehaviour
 
     }
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -51,9 +52,7 @@ public class SailControlleurScript : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawRay(this.transform.position, SAIL.transform.parent.up * 500);
+      
     }
 
     // Update is called once per frame

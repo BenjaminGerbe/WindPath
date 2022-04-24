@@ -29,7 +29,7 @@ public class WindControl : MonoBehaviour
         oldWindVector = windVector;
         newWindVector = windVector;
         percent = 0;
-        timer = Random.Range(1, cdmax);
+        timer = Random.Range(0, cdmax);
     }
 
     public Vector3 GetVectorWind()
