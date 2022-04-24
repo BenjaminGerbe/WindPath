@@ -103,7 +103,7 @@ public class CountTour : MonoBehaviour
                     break;
                 }
             }
-            if (i >= 0 && i < Checkpoint.Length)
+            if (i >= 0 && i < checkpoint.Length)
             {
                 
                 setTrue(i);
