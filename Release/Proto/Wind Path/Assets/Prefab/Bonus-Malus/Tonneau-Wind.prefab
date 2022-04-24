@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1430629193930834633}
   - component: {fileID: 984775079145677250}
   - component: {fileID: 2410528729443652154}
-  - component: {fileID: 829480285264036625}
+  - component: {fileID: 6300975050405383378}
   - component: {fileID: 5275229213955460133}
   m_Layer: 8
-  m_Name: Tonneau
+  m_Name: Tonneau-Wind
   m_TagString: Tonneau
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   offset: 0
---- !u!114 &829480285264036625
+--- !u!114 &6300975050405383378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,11 +78,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430629193930834638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79b0c3f425facd4da1feaea39af6cd0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8120bc6a9d3ecca43ba7d516a5efa6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 10
-  Speed: 99
+  Timer: 0
+  Speed: 0
+  WC: {fileID: 0}
 --- !u!65 &5275229213955460133
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,23 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
-public class Booster : MonoBehaviour
+public class WindBonus : MonoBehaviour
 {
     /// <summary>
     /// Script fait par : Benjamin
-    /// Utilisé pour : Permet de gerer le bonus du booster
+    /// Utilisé pour : Permet de gerer le bonus du Wind
     /// </summary>
     
-
-    [Header("Values")] 
-    public float Timer;
-    public float Speed;
-
+    
+    private WindControl WC;
+    
+    
     private bool starteffect = false;
-    private float Counter;
     private Rigidbody RB;
 
     
@@ -40,15 +37,10 @@ public class Booster : MonoBehaviour
         this.GetComponent<Collider>().enabled = false;
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-      
-        Counter = Timer;
-    
+        WC = GameObject.FindObjectOfType<WindControl>();
     }
-    
     
     // Update is called once per frame
     void FixedUpdate()
@@ -56,19 +48,8 @@ public class Booster : MonoBehaviour
         
         if (starteffect)
         {
-           
-            Counter -= Time.fixedDeltaTime;
-            
-            RB.AddForce(RB.transform.forward * Speed, ForceMode.Acceleration );
-            
-            
-            if (Counter < 0)
-            {
-                this.transform.parent.GetComponent<TonneauSpawnerScript>().Spawn();
-                starteffect = false;
-                //Destroy(this.gameObject);
-            }
-            
+            WC.SetVectorWind(new Vector3(1,0,1));
+            starteffect = false;
         }
         
     }
