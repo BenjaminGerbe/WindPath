@@ -21,6 +21,13 @@ public class CountTour : MonoBehaviour
     public int nbTour;
     public Collider[] Checkpoint;
 
+
+    public float getCurrentTour()
+    {
+      
+        return ActualTour;
+    }
+    
     void Start()
     {
         allCheck = new bool[Checkpoint.Length];

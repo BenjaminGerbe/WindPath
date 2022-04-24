@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class DynamicFov : MonoBehaviour
 {
 
@@ -14,7 +15,9 @@ public class DynamicFov : MonoBehaviour
     ///
     [Header("Components")] 
     public CinemachineVirtualCamera CVC;
-    public Rigidbody RB;
+    
+    
+    private Rigidbody RB;
 
     [Header("Values")] 
     public float fovMin = 70;
@@ -31,7 +34,9 @@ public class DynamicFov : MonoBehaviour
     {
         fov = fovMin;
         currentFov = fov;
-     
+
+        RB = GetComponent<Rigidbody>();
+
     }
 
 

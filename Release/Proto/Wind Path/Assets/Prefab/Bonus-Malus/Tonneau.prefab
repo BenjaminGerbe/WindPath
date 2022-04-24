@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1430629193930834633}
   - component: {fileID: 984775079145677250}
   - component: {fileID: 2410528729443652154}
-  - component: {fileID: 1234985572}
+  - component: {fileID: 829480285264036625}
   - component: {fileID: 5275229213955460133}
   m_Layer: 8
-  m_Name: Toneau
-  m_TagString: Untagged
+  m_Name: Tonneau
+  m_TagString: Tonneau
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1430629193930834638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7443, y: 1.7443, z: 1.7443}
   m_Children:
   - {fileID: 2798788471907306538}
   m_Father: {fileID: 0}
@@ -69,7 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   offset: 0
---- !u!114 &1234985572
+--- !u!114 &829480285264036625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79b0c3f425facd4da1feaea39af6cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 1
-  Speed: 0
+  Timer: 10
+  Speed: 99
 --- !u!65 &5275229213955460133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430629193930834638}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5, y: 5, z: 5}
@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0c3ddb58fb0235e4298ccd457b0583e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

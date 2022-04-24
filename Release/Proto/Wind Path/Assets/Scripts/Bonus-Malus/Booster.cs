@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class Tonneau : MonoBehaviour
+public class Booster : MonoBehaviour
 {
     /// <summary>
     /// Script fait par : Benjamin
@@ -14,14 +14,11 @@ public class Tonneau : MonoBehaviour
 
     [Header("Values")] 
     public float Timer;
-
-    public BoatControlleurScript BCS;
     public float Speed;
 
-    private bool starteffect;
+    private bool starteffect = false;
     private float Counter;
     private Rigidbody RB;
-
 
     
     private void OnTriggerEnter(Collider other)
@@ -29,7 +26,6 @@ public class Tonneau : MonoBehaviour
      
         starteffect = true;
         
-
         if (other.GetComponent<Rigidbody>())
         {
             RB = other.GetComponent<Rigidbody>();
@@ -42,15 +38,13 @@ public class Tonneau : MonoBehaviour
 
    
         this.GetComponent<Collider>().enabled = false;
-
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-    
-
+      
         Counter = Timer;
     
     }
@@ -58,7 +52,8 @@ public class Tonneau : MonoBehaviour
     
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {  
+        
         if (starteffect)
         {
            
@@ -69,15 +64,12 @@ public class Tonneau : MonoBehaviour
             
             if (Counter < 0)
             {
-                
-             
-               
+                this.transform.parent.GetComponent<TonneauSpawnerScript>().Spawn();
                 starteffect = false;
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
             }
             
         }
-        
         
     }
 }

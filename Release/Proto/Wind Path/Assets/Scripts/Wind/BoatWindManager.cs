@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SailControlleurScript))]
 public class BoatWindManager : MonoBehaviour
 {
     /// <summary>
@@ -14,24 +16,24 @@ public class BoatWindManager : MonoBehaviour
 
     [Header("Components")]
     public WindControl windControl;
-    public Rigidbody rigidbodyBoat;
-    public SailControlleurScript SailTransform;
-    public BoatControlleurScript BCS;
-    
+ 
+  
+    private Rigidbody rigidbodyBoat;
+    private SailControlleurScript sailControlleur;
     [Header("Values")]
     [Range(0f,1f)]
     public float coeffWind =1;
 
     public AnimationCurve WindInpact;
-
-    public Transform deffuger;
+    
     private Vector3 directionSail;
 
     private Vector3 boatDirection;
     private float speed;
     void Start()
     {
-
+        rigidbodyBoat = GetComponent<Rigidbody>();
+        sailControlleur = GetComponent<SailControlleurScript>();
         if (windControl is null)
         {
             windControl = FindObjectOfType<WindControl>();
@@ -48,16 +50,16 @@ public class BoatWindManager : MonoBehaviour
     void FixedUpdate()
     {
         
-     
+         
 
-        float angle = Vector3.Angle(SailTransform.AxeSail() , windControl.GetVectorWind());
+        float angle = Vector3.Angle(sailControlleur.AxeSail() , windControl.GetVectorWind());
 
      
         float val = angle / 180f; 
         speed = WindInpact.Evaluate(val);
         
         
-        boatDirection = (SailTransform.AxeSail().normalized + windControl.GetVectorWind().normalized).normalized;
+        boatDirection = (sailControlleur.AxeSail().normalized + windControl.GetVectorWind().normalized).normalized;
       
         rigidbodyBoat.AddForce(  boatDirection*speed* (windControl.windStrength*coeffWind) ,ForceMode.Acceleration) ;
         

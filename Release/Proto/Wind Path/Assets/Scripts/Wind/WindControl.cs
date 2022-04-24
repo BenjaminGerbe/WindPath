@@ -44,6 +44,7 @@ public class WindControl : MonoBehaviour
         percent = Mathf.Clamp(percent, 0, 1);
         if (cnt >= timer)
         {
+          
             newWindVector = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
             oldWindVector = windVector;
             cnt = 0;

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Rigidbody))]
 public class BoatControlleurScript : MonoBehaviour
 {
     /// <summary>
@@ -12,10 +14,9 @@ public class BoatControlleurScript : MonoBehaviour
     /// 
     [Header("Components")] 
     public Transform Boat;
-    public Transform modelBoat;
-    
-    public Rigidbody RB;
-    public InputBoatScript IBS;
+    public InputClass IBS;
+  
+    private Rigidbody RB;
     
     [Header("Values")] 
     public float moveSpeed;
@@ -34,38 +35,46 @@ public class BoatControlleurScript : MonoBehaviour
     private bool IsTurningRight;
 
     private float PourcentageRotation;
-    
+    private IABoatScript IBSia;
     
     
     // Start is called before the first frame update
     void Start()
     {
-      
+
+        RB = GetComponent<Rigidbody>();
         
     }
 
-
+    
+    
     private void Update()
     {
         isAccelerate = false;
         IsTurningLeft = false;
         IsTurningRight = false;
-            
+
+
+        
         if (IBS.isTurningRight())
         {
             IsTurningRight = true;
         }
-        
+
         if (IBS.isTurningLeft())
         {
-          
+
             IsTurningLeft = true;
         }
-        
+
         if (IBS.isAccelerate())
         {
-             isAccelerate= true;
+            isAccelerate = true;
+         
         }
+        
+
+
     }
 
    
@@ -73,6 +82,7 @@ public class BoatControlleurScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         if (isAccelerate)
         {
             RB.velocity += Boat.transform.forward * moveSpeed;

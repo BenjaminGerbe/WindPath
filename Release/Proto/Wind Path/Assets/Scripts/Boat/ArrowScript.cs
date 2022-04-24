@@ -44,7 +44,7 @@ public class ArrowScript : MonoBehaviour
   
     public void aligne<T>(T item)
     {
-        Debug.LogError("ArrowScript ne peux aligner qu'avec le script windControler et SailControlleurScript");
+        Debug.LogError("ArrowScript ne peut aligner qu'avec le script windControler et SailControlleurScript");
     }
 
     public void aligne(WindControl item)

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(BoatControlleurScript))]
 public class SailControlleurScript : MonoBehaviour
 {
     /// <summary>
@@ -10,12 +12,12 @@ public class SailControlleurScript : MonoBehaviour
     /// Utilisé pour :Gérer la voile
     /// </summary>
 
-    [Header("Conpenents")] 
-    public InputBoatScript IBS;
-
-    public Transform Bateau;
+    [Header("Conpenents")]
+    
     public Transform SAIL;
-
+    
+    private InputClass IBS;
+    private Transform Bateau;
     [Header("Values")]
     public float RotateSpeed;
 
@@ -36,12 +38,14 @@ public class SailControlleurScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BoatControlleurScript BCS = GetComponent<BoatControlleurScript>();
+        IBS = BCS.IBS;
+        Bateau = BCS.Boat;
         oldRotate = SAIL.transform.rotation;
     }
 
-    float calculangle()
+    public float calculangle()
     {
-       
         
         var position = SAIL.forward; // CHANGER L AXE PLUS TARD 
         var position1 = Bateau.forward;
@@ -50,10 +54,8 @@ public class SailControlleurScript : MonoBehaviour
         return Angle;
     }
 
-    private void OnDrawGizmos()
-    {
-      
-    }
+
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -70,12 +72,9 @@ public class SailControlleurScript : MonoBehaviour
         if ( IBS.isSailTurningRight() > 0)
         {
             SAIL.transform.RotateAround(SAIL.transform.position,SAIL.transform.up,-RotateSpeed * Time.fixedDeltaTime * IBS.isSailTurningRight());
-
             
-
         }
         
-   
         
         if ( IBS.isSailTurningLeft() > 0)
         {
@@ -83,7 +82,6 @@ public class SailControlleurScript : MonoBehaviour
         
         }
 
-      
         
         Angle = calculangle();
 
@@ -92,7 +90,6 @@ public class SailControlleurScript : MonoBehaviour
             SAIL.transform.rotation = oldRotate;
         }
         
-
     }
     
 }
