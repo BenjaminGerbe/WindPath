@@ -10,26 +10,22 @@ public class Tonneau : MonoBehaviour
     /// Script fait par : Benjamin
     /// Utilisé pour : Permet de gerer le bonus du tonneau
     /// </summary>
-    
+
 
     [Header("Values")] 
     public float Timer;
 
     public BoatControlleurScript BCS;
     public float Speed;
-
+    public float maxSpeed;
+    
     private bool starteffect;
     private float Counter;
     private Rigidbody RB;
-
-
-    
+    private float oldmaxSpeed;
     private void OnTriggerEnter(Collider other)
     {
-     
         starteffect = true;
-        
-
         if (other.GetComponent<Rigidbody>())
         {
             RB = other.GetComponent<Rigidbody>();
@@ -40,7 +36,7 @@ public class Tonneau : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-   
+        oldmaxSpeed = BCS.MaxVitesse;
         this.GetComponent<Collider>().enabled = false;
 
     }
@@ -49,12 +45,13 @@ public class Tonneau : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
-
         Counter = Timer;
-    
     }
-    
+
+    void DesactiveBonus()
+    {
+     
+    }
     
     // Update is called once per frame
     void FixedUpdate()
@@ -65,13 +62,12 @@ public class Tonneau : MonoBehaviour
             Counter -= Time.fixedDeltaTime;
             
             RB.AddForce(RB.transform.forward * Speed, ForceMode.Acceleration );
-            
+
+            BCS.MaxVitesse = maxSpeed;
             
             if (Counter < 0)
             {
-                
-             
-               
+                BCS.MaxVitesse = oldmaxSpeed;
                 starteffect = false;
                 Destroy(this.gameObject);
             }

@@ -16,24 +16,9 @@ public class CountTour : MonoBehaviour
     private string RealRaceTime;
     private float StartTime = 0;
     private int ActualTour = 0;
-    private bool[] allCheck;
-    private int nbTour;
-    private Collider[] checkpoint;
-    private GameObject Gestion;
-    private RaceGestionScript s;
+    private bool check = true;
+    public int nbTour;
 
-    void Start()
-    {
-        Gestion = GameObject.Find("RaceGestion");
-        s = Gestion.GetComponent<RaceGestionScript>();
-        nbTour = s.nbTour;
-        checkpoint = s.checkpoint;
-        allCheck = new bool[checkpoint.Length];
-        for (int i = 0; i < allCheck.Length;i++)
-        {
-            allCheck[i] = true;
-        }
-    }
 
     // Update is called once per frame
     void Update()
@@ -48,12 +33,9 @@ public class CountTour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "finish line" && allTrue())
+        if (other.name=="finish line" && check == true)
         {
-            for (int i = 0; i < allCheck.Length; i++)
-            {
-                allCheck[i] = false;
-            }
+            check = false;
             ActualTour++;
             if (ActualTour == 1)
             {
@@ -61,25 +43,12 @@ public class CountTour : MonoBehaviour
             } 
             if (ActualTour > nbTour)
             {
-                s.setFinish(gameObject);
+                
             }
         }
-        else
+        if (other.name=="checkpoint")
         {
-            int i;
-            for (i = 0; i < checkpoint.Length; i++)
-            {
-                if (other.name == checkpoint[i].name)
-                {
-                    break;
-                }
-            }
-            if (i >= 0 && i < checkpoint.Length)
-            {
-                Console.WriteLine(i);
-                setTrue(i);
-            }
-           
+            check = true;
         }
     }
 
@@ -96,32 +65,5 @@ public class CountTour : MonoBehaviour
         }
         Style.fontSize = 25;
         GUI.Label(new Rect(Screen.width / 20 - 60, Screen.height / 810, 400, 80), tour+"\n"+RealRaceTime,Style);
-    }
-
-    private void setTrue(int i)
-    {
-        if (i == 0)
-        {
-            allCheck[i] = true;
-        }
-        else
-        {
-            if (allCheck[i-1]==true)
-            {
-                allCheck[i] = true;
-            }
-        }
-    }
-
-    private bool allTrue()
-    {
-        for (int i = 0; i < allCheck.Length; i++)
-        {
-            if (allCheck[i]==false)
-            {
-                return false;
-            }
-        }
-        return true;
     }
 }

@@ -29,10 +29,6 @@ public class ArrowScript : MonoBehaviour
         {
             aligne(MBControler as SailControlleurScript);
         }
-        else if (MBControler is BoatWindManager)
-        {
-            aligne(MBControler as BoatWindManager);
-        }
         else
         {
             aligne(MBControler);
@@ -51,12 +47,6 @@ public class ArrowScript : MonoBehaviour
     {
      
         AlignItem.rotation = Quaternion.LookRotation(item.GetVectorWind());
-    }
-    
-    public void aligne(BoatWindManager item)
-    {
-     
-        AlignItem.rotation = Quaternion.LookRotation(item.getDirectionBoat());
     }
     
     public void aligne(SailControlleurScript item)
