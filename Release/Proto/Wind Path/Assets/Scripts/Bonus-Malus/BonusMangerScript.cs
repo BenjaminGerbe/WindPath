@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 /// <summary>
 /// Script fait par : Benjamin
@@ -11,12 +10,21 @@ using UnityEngine.Events;
 
 
 
+[System.Serializable]
+public struct Bonus
+{
+    public string name;
+    public GameObject Object;
+
+}
+
 public class BonusMangerScript : MonoBehaviour
 {
     
     
     [Header("Values")] 
-    public List<UnityEvent> lstEffectBonus;
+    public List<Bonus> lstBonusMalus;
+    
     
 
     // Start is called before the first frame update

@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(SailControlleurScript))]
 public class BoatWindManager : MonoBehaviour
 {
     /// <summary>
@@ -16,52 +14,38 @@ public class BoatWindManager : MonoBehaviour
 
     [Header("Components")]
     public WindControl windControl;
- 
-  
-    private Rigidbody rigidbodyBoat;
-    private SailControlleurScript sailControlleur;
+    public Rigidbody rigidbodyBoat;
+    public SailControlleurScript SailTransform;
+    
+    
     [Header("Values")]
     [Range(0f,1f)]
     public float coeffWind =1;
 
-    public AnimationCurve WindInpact;
-    
-    private Vector3 directionSail;
 
-    private Vector3 boatDirection;
-    private float speed;
     void Start()
     {
-        rigidbodyBoat = GetComponent<Rigidbody>();
-        sailControlleur = GetComponent<SailControlleurScript>();
+
         if (windControl is null)
         {
             windControl = FindObjectOfType<WindControl>();
         }
     }
 
-    public Vector3 getDirectionBoat()
-    {
-        return boatDirection;
-    }
-    
-
     // Update is called once per frame
     void FixedUpdate()
     {
         
-         
-
-        float angle = Vector3.Angle(sailControlleur.AxeSail() , windControl.GetVectorWind());
-
      
-        float val = angle / 180f; 
-        speed = WindInpact.Evaluate(val);
+
+        float angle = Vector3.Angle(SailTransform.AxeSail() , windControl.GetVectorWind());
         
+        float val = angle / 180f;
+        float speed = Mathf.Lerp(1f,0,val);
         
-        boatDirection = (sailControlleur.AxeSail().normalized + windControl.GetVectorWind().normalized).normalized;
-      
-        rigidbodyBoat.AddForce(  boatDirection*speed* (windControl.windStrength*coeffWind) ,ForceMode.Acceleration) ;
+        Vector3 windVector = (SailTransform.AxeSail().normalized  + windControl.GetVectorWind().normalized).normalized;
+        
+        rigidbodyBoat.AddForce(  windVector*coeffWind * speed * windControl.windStrength,ForceMode.Acceleration) ;
         
         
 

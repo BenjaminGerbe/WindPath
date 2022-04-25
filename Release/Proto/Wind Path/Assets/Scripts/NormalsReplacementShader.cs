@@ -9,7 +9,7 @@ public class NormalsReplacementShader : MonoBehaviour
 
 
     private RenderTexture renderTexture;
-    private Camera nCamera;
+    private Camera camera;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +22,14 @@ public class NormalsReplacementShader : MonoBehaviour
         Shader.SetGlobalTexture("_CameraNormalsTexture",renderTexture);
 
         GameObject copy = new GameObject("Normals camera");
-        nCamera = copy.AddComponent<Camera>();
-        nCamera.CopyFrom(thisCamera);
-        nCamera.transform.SetParent(this.transform);
-        nCamera.targetTexture = renderTexture;
-        nCamera.SetReplacementShader(normalsShader,"RenderType");
-        nCamera.depth = thisCamera.depth - 1;
+        camera = copy.AddComponent<Camera>();
+        camera.CopyFrom(thisCamera);
+        camera.transform.SetParent(this.transform);
+        camera.targetTexture = renderTexture;
+        camera.SetReplacementShader(normalsShader,"RenderType");
+        camera.depth = thisCamera.depth - 1;
 
-
+        
     }
 
 }

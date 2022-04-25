@@ -16,7 +16,7 @@ Shader "Unlit/WaterShader"
         _WaveHeight("Wave Height",float)=0
         _FoamLineMaxDistance("Foam Line Max Distance",float) = 0.1
         _FoamLineMinDistance("Foam Line Min Distance",float) = 0.01
-
+        [HideInInspector] _ReflectionTex("", 2D) = "white" {}
 
         
 
@@ -145,8 +145,6 @@ Shader "Unlit/WaterShader"
 
                 
                 float foamline =1- step(0.5, saturate( depth /_Foam));
-
-
                 
                 trace = step(0.5,trace);
                 float4 col = float4(0,0,0,0) ;
@@ -155,7 +153,7 @@ Shader "Unlit/WaterShader"
                 float4 tex2 = lerp(_SurfaceColor,_DeepColor,tex.x);
                 
                 col = lerp(tex2,_DeepColor,col.x);
-                
+           
                 col += (foamline.x * _FoamColor) ;
                 
                 trace = float4(trace.xxx,0) * _FoamColor;

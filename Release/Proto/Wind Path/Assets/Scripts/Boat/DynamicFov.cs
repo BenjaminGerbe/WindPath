@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class DynamicFov : MonoBehaviour
 {
 
@@ -15,9 +14,7 @@ public class DynamicFov : MonoBehaviour
     ///
     [Header("Components")] 
     public CinemachineVirtualCamera CVC;
-    
-    
-    private Rigidbody RB;
+    public Rigidbody RB;
 
     [Header("Values")] 
     public float fovMin = 70;
@@ -34,9 +31,7 @@ public class DynamicFov : MonoBehaviour
     {
         fov = fovMin;
         currentFov = fov;
-
-        RB = GetComponent<Rigidbody>();
-
+     
     }
 
 
@@ -44,7 +39,7 @@ public class DynamicFov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-     
+        Debug.Log(transform.InverseTransformDirection(RB.velocity).z);
         
         float pourcentage = Mathf.InverseLerp(minVitesse, maxVitese,
             Mathf.Abs(transform.InverseTransformDirection(RB.velocity).z));

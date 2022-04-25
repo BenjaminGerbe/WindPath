@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     /// <summary>
     /// Script fait par: Julien
-    /// UtilisÃ© pour : gestion de la pause
+    /// Utilisé pour : gestion de la pause
     /// </summary>
     private bool pause = false;
     public GameObject pauseMenu;
@@ -17,7 +17,6 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pause = !pause;
@@ -33,7 +32,6 @@ public class PauseMenu : MonoBehaviour
                 pauseMenu.SetActive(false);
             }
         }
-        
     }
 
     public void QuitRace()

@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Tonneau
-  - Boat
-  - Checkpoint
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,8 +15,8 @@ TagManager:
   - Boat
   - BonusMalus
   - CircuitManager
-  - Player 1
-  - Player 2
+  - 
+  - 
   - 
   - 
   - 
@@ -43,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI
-    uniqueID: 3420580031
     locked: 0

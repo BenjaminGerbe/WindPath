@@ -25,34 +25,30 @@ public class WindControl : MonoBehaviour
     
     void Start()
     {
-        SetVectorWind(new Vector2(Random.Range(-1f,1f), Random.Range(-1f, 1f)));
+        windVector = new Vector2(Random.Range(-1f,1f), Random.Range(-1f, 1f)) ;
+        oldWindVector = windVector;
+        newWindVector = windVector;
+        percent = 0;
+        timer = Random.Range(1, cdmax);
     }
 
     public Vector3 GetVectorWind()
     {
         return new Vector3 (windVector.x,0,windVector.y) * windStrength;
     }
-    
-    public void SetVectorWind(Vector3 vec)
-    {
-        Debug.Log("je passe");
-        newWindVector =vec;
-        oldWindVector = windVector;
-        cnt = 0;
-        percent = 0;
-    }
-    
     // Update is called once per frame
     void Update()
     {
         cnt += Time.deltaTime;
-        percent += Time.deltaTime / speedChange;
+        percent += Time.deltaTime;
         percent = Mathf.Clamp(percent, 0, 1);
-       
         if (cnt >= timer)
         {
-            //SetVectorWind(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
+            newWindVector = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            oldWindVector = windVector;
+            cnt = 0;
+            percent = 0;
         }
-        windVector = Vector2.Lerp(oldWindVector, newWindVector, percent);
+        windVector = Vector2.Lerp(oldWindVector, newWindVector, percent/speedChange);
     }
 }
