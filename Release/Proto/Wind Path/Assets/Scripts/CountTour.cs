@@ -61,9 +61,11 @@ public class CountTour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.name == "finish line" && allTrue())
         
      
         if (other.name == "finish line" && allTrue())
+        if (other.name.Contains("finish line") && allTrue())
         {
             for (int i = 0; i < allCheck.Length; i++)
             {
