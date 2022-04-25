@@ -28,13 +28,15 @@ public class InputDataOnUIScript : MonoBehaviour
 
 
     private RacingManager RM;
-  
+
     private bool finish = false;
     
     // Start is called before the first frame update
     void Start()
     {
         RM = GameObject.FindObjectOfType<RacingManager>();
+        
+        
     }
 
     // Update is called once per frame
@@ -46,8 +48,11 @@ public class InputDataOnUIScript : MonoBehaviour
             txtTour.enabled = false;
             Pannel.SetActive(true);
             Time.text = RM.getTime();
-            Position.text = CT.getTour().ToString();
+            
+            Position.text = CPS.getPosition(this.transform).ToString();
         }
+        
+       
         
         
         txtPosition.text = "#"+CPS.getPosition(this.transform).ToString();

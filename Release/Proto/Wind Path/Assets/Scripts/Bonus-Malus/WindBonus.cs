@@ -16,7 +16,7 @@ public class WindBonus : MonoBehaviour
     
     private bool starteffect = false;
     private Rigidbody RB;
-
+    private Transform targetTranform;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -28,6 +28,11 @@ public class WindBonus : MonoBehaviour
             RB = other.GetComponent<Rigidbody>();
         }
 
+        if (other.GetComponent<SailControlleurScript>() )
+        {
+            targetTranform = other.GetComponent<SailControlleurScript>().SAIL;
+        }
+        
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
@@ -43,13 +48,16 @@ public class WindBonus : MonoBehaviour
     }
     
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {  
         
         if (starteffect)
         {
+           
+            Debug.Log(RB.transform.forward);
             this.transform.parent.GetComponent<TonneauSpawnerScript>().Spawn();
-            WC.SetVectorWind(RB.transform.forward);
+            WC.SetVectorWind(targetTranform.forward);
+           
             starteffect = false;
             Destroy(this.gameObject);
         }
