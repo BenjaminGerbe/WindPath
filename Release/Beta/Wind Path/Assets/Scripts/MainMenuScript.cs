@@ -15,8 +15,15 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void Launch()
+    public void LaunchSolo()
     {
+        PlayerPrefs.SetString("GameType", "Solo");
+        SceneManager.LoadScene(1);
+    }
+
+    public void LaunchMulti()
+    {
+        PlayerPrefs.SetString("GameType", "Multi");
         SceneManager.LoadScene(1);
     }
 }
