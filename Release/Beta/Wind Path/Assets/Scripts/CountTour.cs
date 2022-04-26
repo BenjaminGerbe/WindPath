@@ -47,6 +47,9 @@ public class CountTour : MonoBehaviour
     
     void Start()
     {
+        GameObject Checkpoints = GameObject.Find("Checkpoints");
+        nbTour = Checkpoints.GetComponent<Checkpoints>().nbTour;
+        Checkpoint = Checkpoints.GetComponent<Checkpoints>().Checkpoint;
 
         allCheck = new bool[Checkpoint.Length];
       

@@ -39,7 +39,7 @@ public class RacingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartTime = Time.time;
+        
         counterTimer = Timer;
 
         lstBCS = GameObject.FindObjectsOfType<BoatControlleurScript>();
@@ -78,13 +78,14 @@ public class RacingManager : MonoBehaviour
             if (counterTimer < 1)
             {
                 Counter.text = "GO !";
-                SetStart();
+                StartTime = Time.time;
                 start = true;
                 
             }
 
             if (counterTimer < 0)
             {
+                SetStart();
                 Counter.transform.parent.gameObject.SetActive(false);
                 hideCounter = true;
             }
