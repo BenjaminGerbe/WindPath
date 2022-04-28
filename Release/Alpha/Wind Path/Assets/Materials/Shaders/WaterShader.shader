@@ -133,7 +133,7 @@ Shader "Unlit/WaterShader"
                 float3 tex = tex2D(_MainTex, i.uv * _MainTex_ST.xy + _MainTex_ST.zw + (dis.x - dis.y + (trace3.x)*2)/20 );
            
              
-              float4 trace = tex2D(_TraceTexture, i.uv + (dis.x - dis.y)/500 ).b;
+                float4 trace = tex2D(_TraceTexture, i.uv + (dis.x - dis.y)/500 ).b;
                 
                 float3 normalDot = saturate(dot(i.normals,normals));
                 
