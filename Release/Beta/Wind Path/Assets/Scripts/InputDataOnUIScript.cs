@@ -50,12 +50,13 @@ public class InputDataOnUIScript : MonoBehaviour
             Time.text = RM.getTime();
             
             Position.text = CPS.getPosition(this.transform).ToString();
+            txtPosition.text = "#" + CPS.getPosition(this.transform).ToString();
         }
         
        
         
         
-        txtPosition.text = "#"+CPS.getPosition(this.transform).ToString();
+        
         txtTour.text = CT.getTour().ToString() +"/"+CT.nbTour.ToString();
     }
 }
