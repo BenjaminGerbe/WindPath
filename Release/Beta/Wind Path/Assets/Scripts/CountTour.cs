@@ -16,34 +16,13 @@ public class CountTour : MonoBehaviour
     private string RealRaceTime;
     private float StartTime = 0;
     private int ActualTour = 0;
-    private bool[] allCheck;
+    private bool[] allCheck = null;
     private bool finish = false;
     
     public int nbTour;
     public Collider[] Checkpoint;
 
-    public bool isFinish()
-    {
-        return finish;
-    }
 
-    public string getTime()
-    {
-        return this.RealRaceTime;
-    }
-    
-
-    
-    public int getTour()
-    {
-        return this.ActualTour;
-    }
-    
-    public float getCurrentTour()
-    {
-      
-        return ActualTour;
-    }
     
     void Start()
     {
@@ -154,5 +133,40 @@ public class CountTour : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public bool isFinish()
+    {
+        return finish;
+    }
+
+    public string getTime()
+    {
+        return this.RealRaceTime;
+    }
+
+    public int getLastCheckpointpassed()
+    {
+        int i = 0;
+        if (allCheck != null)
+        {
+            while (i < this.allCheck.Length && this.allCheck[i] == true)
+            {
+                i++;
+            }
+        }
+        i--;
+        return i;
+    }
+
+    public int getTour()
+    {
+        return this.ActualTour;
+    }
+
+    public float getCurrentTour()
+    {
+
+        return ActualTour;
     }
 }
