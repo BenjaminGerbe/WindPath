@@ -1,4 +1,4 @@
-#Control 
+# Control 
 
 
 ###### clavier (joueur 1):
