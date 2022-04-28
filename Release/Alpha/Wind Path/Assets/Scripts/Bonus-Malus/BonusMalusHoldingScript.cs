@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,47 +9,51 @@ using UnityEngine.Events;
 public class BonusMalusHoldingScript : MonoBehaviour
 {
     
+    private List<BonusObject> LstBonus;
     
-    
-    public BonusMangerScript BMS;
-
-    private UnityEvent effect;
-    private bool StartEffect;
-    
-    
+    private bool detect = false;
+    private bool effect = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Tonneau"))
         {
-            
-            effect = GenerateBonus(BMS.lstEffectBonus);
-           
-
+            detect = true;
         }
     }
 
+    private void Start()
+    {
+        var arr = FindObjectsOfType<MonoBehaviour>().OfType<BonusObject>();
+        LstBonus = new List<BonusObject>();
+        
+        foreach (var s in arr) {
+            LstBonus.Add(s);
+        }
+        
+    }
 
     public UnityEvent GenerateBonus(List<UnityEvent> Evt)
     {
         return Evt[0];
     }
-    
-    // Start is called before the first frame update
 
-    
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && effect != null)
-        { 
-            StartEffect = true;
-          
+        if (LstBonus.Count >=2)
+        {
+            if (Input.GetButtonDown("Fire1") && detect)
+            { 
+                effect = true;
+            }
+
+            if (effect )
+            {
+                LstBonus[0].Starteffect(this.transform);
+                effect = false;
+
+            }
         }
 
-        if (StartEffect)
-        {
-            effect.Invoke();
-        }
-        
     }
 }

@@ -29,8 +29,11 @@ public class WindBonus : MonoBehaviour
     private void Start()
     {
         WC = GameObject.FindObjectOfType<WindControl>();
+        
+        
     }
     
+
     // Update is called once per frame
     void Update()
     {  
@@ -42,6 +45,7 @@ public class WindBonus : MonoBehaviour
             WC.ForceSetWind(new Vector3(targetTranform.forward.x,targetTranform.forward.z));
             starteffect = false;
             Destroy(this.gameObject);
+            
         }
         
     }
