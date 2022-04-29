@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 
 public class BonusMalusHoldingScript : MonoBehaviour
@@ -13,11 +14,15 @@ public class BonusMalusHoldingScript : MonoBehaviour
     
     private bool detect = false;
     private bool effect = false;
+
+    private int indexObject;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Tonneau"))
         {
             detect = true;
+            indexObject = Random.Range(0, LstBonus.Count);
+            Destroy(other.gameObject);
         }
     }
 
@@ -51,7 +56,7 @@ public class BonusMalusHoldingScript : MonoBehaviour
             if (effect )
             {
                 
-                LstBonus[0].Starteffect(this.transform);
+                LstBonus[indexObject].Starteffect(this.transform);
                 effect = false;
 
             }
