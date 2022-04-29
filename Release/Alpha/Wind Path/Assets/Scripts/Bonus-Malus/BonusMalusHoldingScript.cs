@@ -45,10 +45,12 @@ public class BonusMalusHoldingScript : MonoBehaviour
             if (Input.GetButtonDown("Fire1") && detect)
             { 
                 effect = true;
+                detect = false;
             }
 
             if (effect )
             {
+                
                 LstBonus[0].Starteffect(this.transform);
                 effect = false;
 
