@@ -50,4 +50,9 @@ public class MainMenuScript : MonoBehaviour
         Menu[1].SetActive(false);
         GameObject.Find("Play_Solo").GetComponent<UnityEngine.UI.Button>().Select();
     }
+
+    public void returnToStart()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

@@ -48,7 +48,7 @@ public class InputDataOnUIScript : MonoBehaviour
             txtTour.enabled = false;
             Pannel.SetActive(true);
             Time.text = RM.getTime();
-            
+            txtPosition.enabled = false;
             Position.text = CPS.getPosition(this.transform).ToString();
         }
 

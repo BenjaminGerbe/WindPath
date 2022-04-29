@@ -18,7 +18,9 @@ public class CountTour : MonoBehaviour
     private int ActualTour = 0;
     private bool[] allCheck = null;
     private bool finish = false;
-    
+    private GameObject lb;
+    private RaceGestionScript rcs;
+
     public int nbTour;
     public Collider[] Checkpoint;
 
@@ -26,6 +28,8 @@ public class CountTour : MonoBehaviour
     
     void Start()
     {
+        lb = GameObject.Find("Racing Setup");
+        rcs = lb.GetComponent<RaceGestionScript>();
         GameObject Checkpoints = GameObject.Find("Checkpoints");
         nbTour = Checkpoints.GetComponent<Checkpoints>().nbTour;
         Checkpoint = Checkpoints.GetComponent<Checkpoints>().Checkpoint;
@@ -57,6 +61,7 @@ public class CountTour : MonoBehaviour
             if (ActualTour > nbTour && !finish)
             {
                 finish = true;
+                rcs.setFinish(this.gameObject);
                 if (GetComponent<InputBoatScript>())
                 {
                     Debug.Log("finish");
