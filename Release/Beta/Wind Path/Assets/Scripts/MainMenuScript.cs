@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public GameObject[] Menu;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -24,12 +25,29 @@ public class MainMenuScript : MonoBehaviour
     public void LaunchSolo()
     {
         PlayerPrefs.SetString("GameType", "Solo");
-        SceneManager.LoadScene(1);
+        Menu[0].SetActive(false);
+        Menu[1].SetActive(true);
+        GameObject.Find("Circuit1").GetComponent<UnityEngine.UI.Button>().Select();
     }
+
 
     public void LaunchMulti()
     {
         PlayerPrefs.SetString("GameType", "Multi");
-        SceneManager.LoadScene(1);
+        Menu[0].SetActive(false);
+        Menu[1].SetActive(true);
+        GameObject.Find("Circuit1").GetComponent<UnityEngine.UI.Button>().Select();
+    }
+
+    public void LaunchCircuit(int map)
+    {
+        SceneManager.LoadScene(map);
+    }
+
+    public void ReturnToMenu()
+    {
+        Menu[0].SetActive(true);
+        Menu[1].SetActive(false);
+        GameObject.Find("Play_Solo").GetComponent<UnityEngine.UI.Button>().Select();
     }
 }
