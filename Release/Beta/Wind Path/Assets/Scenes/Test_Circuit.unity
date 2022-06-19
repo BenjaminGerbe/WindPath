@@ -2790,9 +2790,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionMilesStones:
-  - {fileID: 1423799034}
-  - {fileID: 1329358387}
-  - {fileID: 1303490114}
+  - {x: -38.481815, y: -0.000030398369, z: 73.02165}
+  - {x: -104.386696, y: -0.000030398369, z: -13.082497}
+  - {x: 21.091543, y: -0.000030398369, z: -40.955254}
   distanceChange: 60
 --- !u!1 &808309722
 GameObject:
@@ -3322,7 +3322,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916311961}
-  m_LocalRotation: {x: 0.000000014901161, y: 0.00000001547821, z: -0.000000007866773, w: 1}
+  m_LocalRotation: {x: -0, y: -0.000000013356626, z: 0.0000000067884813, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3351,7 +3351,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 176409302}
   m_Follow: {fileID: 176409302}
   m_Lens:
-    FieldOfView: 78
+    FieldOfView: 70
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -4022,7 +4022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e654c661b606c469fa72a197b10ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplayer: 0
   boats:
   - {fileID: 1147984796}
   - {fileID: 1824843753}
@@ -4082,7 +4081,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208550121}
-  m_LocalRotation: {x: 0.2329521, y: 0.000000007202245, z: -0.0000000017252425, w: 0.9724882}
+  m_LocalRotation: {x: 0.2329521, y: -0.0000000072869835, z: 0.000000001745541, w: 0.9724882}
   m_LocalPosition: {x: 51.757973, y: -50.529984, z: -13.131397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4569,9 +4568,10 @@ GameObject:
   - component: {fileID: 1258801681}
   - component: {fileID: 1258801680}
   - component: {fileID: 1258801678}
+  - component: {fileID: 1258801679}
   m_Layer: 6
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4602,6 +4602,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2f323d8c75f6348a533d6f91697231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1258801679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258801676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1258801680
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5288,6 +5301,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560593070}
   m_CullTransparentMesh: 1
+--- !u!1 &1593437597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593437598}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1593437598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593437597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620184803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,7 +5582,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627256958}
-  m_LocalRotation: {x: 0.000000014901161, y: 0.00000001547821, z: -0.000000007866773, w: 1}
+  m_LocalRotation: {x: -0, y: -0.000000013356626, z: 0.0000000067884813, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5825,7 +5868,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660064767}
-  m_LocalRotation: {x: 0.2329521, y: 0.000000007202245, z: -0.0000000017252425, w: 0.9724882}
+  m_LocalRotation: {x: 0.2329521, y: -0.0000000072869835, z: 0.000000001745541, w: 0.9724882}
   m_LocalPosition: {x: 32.657974, y: -50.529984, z: -13.131397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5892,7 +5935,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 78
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

@@ -29,7 +29,7 @@ public class IABoatScript : InputClass
     }
 
 
-    public void calculateDirection()
+    public void  calculateDirection()
     {
         if (NMP.corners.Length <= 0)
         {
@@ -45,7 +45,7 @@ public class IABoatScript : InputClass
     {
        // _navMeshAgent.SetDestination(targetPoint.position);
      
-        Vector3 currentTarget = MIS.positionMilesStones[this.currentTargetPoint].position;
+        Vector3 currentTarget = MIS.positionMilesStones[this.currentTargetPoint];
         if (Vector3.Distance(currentTarget,this.transform.position) < MIS.distanceChange)
         {
 

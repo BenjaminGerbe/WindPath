@@ -13,7 +13,7 @@ public class MilesStoneIAScript : MonoBehaviour
     /// </summary>
     
     [Header("Conpenents")]
-    public List<Transform> positionMilesStones;
+    public List<Vector3> positionMilesStones;
     public float distanceChange;
     
     
