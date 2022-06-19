@@ -21,7 +21,7 @@ public class CountTour : MonoBehaviour
     
     public int nbTour;
     public Collider[] Checkpoint;
-
+    private int lastCheckPoint;
     public bool isFinish()
     {
         return finish;
@@ -32,7 +32,10 @@ public class CountTour : MonoBehaviour
         return this.RealRaceTime;
     }
     
-
+    public int getLastCheckpointpassed()
+    {
+        return lastCheckPoint;
+    }
     
     public int getTour()
     {
@@ -98,6 +101,7 @@ public class CountTour : MonoBehaviour
                 
                 if (other.name == Checkpoint[i].name)
                 {
+                    lastCheckPoint = i;
                     break;
                 }
             }
