@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 
-public class BonusMalusHoldingScript : MonoBehaviour
+public class BonusMalusHoldingIAScript : MonoBehaviour
 {
     
     private List<BonusObject> LstBonus;
@@ -50,19 +50,16 @@ public class BonusMalusHoldingScript : MonoBehaviour
     {
         if (LstBonus.Count >=2)
         {
-            if (Input.GetButtonDown("Fire1") && detect)
-            { 
-                effect = true;
+
+            if (detect)
+            {
+                 
+                Debug.Log("l'IA : " + this.transform.name + " à activé : "+LstBonus[2].getName());
+                LstBonus[2].Starteffect(this.transform);
                 detect = false;
             }
-
-            if (effect )
-            {
-             
-                LstBonus[1].Starteffect(this.transform);
-                effect = false;
-
-            }
+           
+            
         }
 
     }

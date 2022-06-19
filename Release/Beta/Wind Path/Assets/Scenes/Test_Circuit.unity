@@ -966,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 3822494630712572246, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: BMS
       value: 
-      objectReference: {fileID: 2038094660}
+      objectReference: {fileID: 0}
     - target: {fileID: 5853319430239236757, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -3322,7 +3322,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916311961}
-  m_LocalRotation: {x: -0, y: -0.000000013356626, z: 0.0000000067884813, w: 1}
+  m_LocalRotation: {x: -0.000000014901161, y: -0.000000007514301, z: 0.000000003819131, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4081,7 +4081,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208550121}
-  m_LocalRotation: {x: 0.2329521, y: -0.0000000072869835, z: 0.000000001745541, w: 0.9724882}
+  m_LocalRotation: {x: 0.23295209, y: -0.000000008197244, z: 0.0000000019635868, w: 0.9724882}
   m_LocalPosition: {x: 51.757973, y: -50.529984, z: -13.131397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5582,7 +5582,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627256958}
-  m_LocalRotation: {x: -0, y: -0.000000013356626, z: 0.0000000067884813, w: 1}
+  m_LocalRotation: {x: -0.000000014901161, y: -0.000000007514301, z: 0.000000003819131, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5868,7 +5868,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660064767}
-  m_LocalRotation: {x: 0.2329521, y: -0.0000000072869835, z: 0.000000001745541, w: 0.9724882}
+  m_LocalRotation: {x: 0.23295209, y: -0.000000008197244, z: 0.0000000019635868, w: 0.9724882}
   m_LocalPosition: {x: 32.657974, y: -50.529984, z: -13.131397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5987,7 +5987,7 @@ PrefabInstance:
     - target: {fileID: 3822494630712572246, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: BMS
       value: 
-      objectReference: {fileID: 2038094660}
+      objectReference: {fileID: 0}
     - target: {fileID: 5853319430239236757, guid: bd23dbf4fdda1a341ac9c973370c701d, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -7365,6 +7365,7 @@ GameObject:
   - component: {fileID: 2038094661}
   - component: {fileID: 2038094660}
   - component: {fileID: 2038094662}
+  - component: {fileID: 2038094663}
   m_Layer: 0
   m_Name: BonusManager
   m_TagString: Untagged
@@ -7379,26 +7380,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038094659}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f79a7d3fb86ed14c9dac465a1a1fb1e, type: 3}
+  m_Script: {fileID: 11500000, guid: ee6baa3df01e6db4b9e0ef9e34d9f928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lstEffectBonus:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2038094662}
-        m_TargetAssemblyTypeName: Booster, Assembly-CSharp
-        m_MethodName: Effect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  NameOfBonus: Wind
 --- !u!4 &2038094661
 Transform:
   m_ObjectHideFlags: 0
@@ -7420,13 +7407,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038094659}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79b0c3f425facd4da1feaea39af6cd0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f26ec32e0d964e40b43269190f57f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 10
-  Speed: 99
+  NameOfBonus: Bonus
+  TimerBoost: 2.25
+  Speed: 60
+--- !u!114 &2038094663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038094659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0250c8290d2bbb46a29949c5535ba87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfBonus: Canon
 --- !u!1 &2076466141
 GameObject:
   m_ObjectHideFlags: 0
