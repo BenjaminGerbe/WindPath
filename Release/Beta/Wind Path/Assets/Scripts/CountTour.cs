@@ -16,9 +16,11 @@ public class CountTour : MonoBehaviour
     private string RealRaceTime;
     private float StartTime = 0;
     private int ActualTour = 0;
-    private bool[] allCheck;
+    private bool[] allCheck = null;
     private bool finish = false;
-    
+    private GameObject lb;
+    private RaceGestionScript rcs;
+
     public int nbTour;
     public Collider[] Checkpoint;
     private int lastCheckPoint;
@@ -37,19 +39,13 @@ public class CountTour : MonoBehaviour
         return lastCheckPoint;
     }
     
-    public int getTour()
-    {
-        return this.ActualTour;
-    }
-    
-    public float getCurrentTour()
-    {
-      
-        return ActualTour;
-    }
-    
     void Start()
     {
+        lb = GameObject.Find("Racing Setup");
+        rcs = lb.GetComponent<RaceGestionScript>();
+        GameObject Checkpoints = GameObject.Find("Checkpoints");
+        nbTour = Checkpoints.GetComponent<Checkpoints>().nbTour;
+        Checkpoint = Checkpoints.GetComponent<Checkpoints>().Checkpoint;
 
         allCheck = new bool[Checkpoint.Length];
       
@@ -78,6 +74,7 @@ public class CountTour : MonoBehaviour
             if (ActualTour > nbTour && !finish)
             {
                 finish = true;
+                rcs.setFinish(this.gameObject);
                 if (GetComponent<InputBoatScript>())
                 {
                     Debug.Log("finish");
@@ -155,5 +152,40 @@ public class CountTour : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public bool isFinish()
+    {
+        return finish;
+    }
+
+    public string getTime()
+    {
+        return this.RealRaceTime;
+    }
+
+    public int getLastCheckpointpassed()
+    {
+        int i = 0;
+        if (allCheck != null)
+        {
+            while (i < this.allCheck.Length && this.allCheck[i] == true)
+            {
+                i++;
+            }
+        }
+        i--;
+        return i;
+    }
+
+    public int getTour()
+    {
+        return this.ActualTour;
+    }
+
+    public float getCurrentTour()
+    {
+
+        return ActualTour;
     }
 }

@@ -6,18 +6,19 @@ public class MultiplayerScript : MonoBehaviour
 {
 
     public List<GameObject> boats;
-    public Camera cam;
+    public List<Camera> cam;
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.HasKey("GameType") && PlayerPrefs.GetString("GameType")=="Solo")
+        if (PlayerPrefs.HasKey("GameType") && PlayerPrefs.GetString("GameType")=="Multi")
         {
-            boats[0].active=false;
-            cam.rect = new Rect(-0.5f, 0.0f, 2.0f, 1.0f);
+            boats[1].SetActive(false);
         }
         else
         {
-            boats[1].active = false;
+            boats[0].SetActive(false);
+            cam[0].rect = new Rect(-0.5f, 0.0f, 2.0f, 1.0f);
+            cam[1].gameObject.SetActive(false);
         }
     }
 }
