@@ -73,7 +73,6 @@ public class BoatControlleurScript : MonoBehaviour
 
         if (IBS.isAccelerate())
         {
-            Debug.Log("je passe");
             isAccelerate = true;
          
         }
