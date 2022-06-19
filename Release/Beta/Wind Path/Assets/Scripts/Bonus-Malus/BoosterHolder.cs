@@ -19,6 +19,11 @@ public class BoosterHolder : MonoBehaviour,BonusObject
     {
       
     }
+
+    public void LoadEffect(Transform go)
+    {
+        
+    }
     
     public void Starteffect(Transform go)
     {

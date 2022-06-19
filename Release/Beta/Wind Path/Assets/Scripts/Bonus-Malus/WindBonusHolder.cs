@@ -20,6 +20,11 @@ public class WindBonusHolder : MonoBehaviour,BonusObject
         WC = GameObject.FindObjectOfType<WindControl>();
     }
 
+    public void LoadEffect(Transform go)
+    {
+        
+    }
+
 
     public string getName()
     {

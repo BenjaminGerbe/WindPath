@@ -34,6 +34,7 @@ public  class InputBoatScript : InputClass, BoatInput.IBateauActions
     {
         if (_ControllMethod == ControllMethod.Controller)
         {
+          
             if (Input.GetAxisRaw("HorizontalC") > 0 )  return  true;
             return false;
         }
@@ -60,7 +61,7 @@ public  class InputBoatScript : InputClass, BoatInput.IBateauActions
     {
         if (_ControllMethod == ControllMethod.Controller)
         {
-         
+            
             if (Input.GetAxisRaw("VerticalC") > 0 )  return  true;
    
             return false;

@@ -18,12 +18,14 @@ public class BonusMalusHoldingScript : MonoBehaviour
     private int indexObject;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Tonneau"))
+        if (other.CompareTag("Tonneau") && !detect)
         {
        
             detect = true;
             indexObject = Random.Range(0, LstBonus.Count);
             other.gameObject.GetComponentInParent<TonneauSpawnerScript>().Spawn();
+
+            LstBonus[indexObject].LoadEffect(this.transform);
             Destroy(other.gameObject);
     
         }
@@ -59,8 +61,9 @@ public class BonusMalusHoldingScript : MonoBehaviour
             if (effect )
             {
              
-                LstBonus[1].Starteffect(this.transform);
+                LstBonus[indexObject].Starteffect(this.transform);
                 effect = false;
+                
 
             }
         }

@@ -18,12 +18,15 @@ public class BonusMalusHoldingIAScript : MonoBehaviour
     private int indexObject;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Tonneau"))
+        if (other.CompareTag("Tonneau") && !detect)
         {
        
             detect = true;
             indexObject = Random.Range(0, LstBonus.Count);
             other.gameObject.GetComponentInParent<TonneauSpawnerScript>().Spawn();
+            LstBonus[indexObject].LoadEffect(this.transform);
+            
+            
             Destroy(other.gameObject);
     
         }
@@ -53,10 +56,21 @@ public class BonusMalusHoldingIAScript : MonoBehaviour
 
             if (detect)
             {
-                 
-                Debug.Log("l'IA : " + this.transform.name + " à activé : "+LstBonus[2].getName());
-                LstBonus[2].Starteffect(this.transform);
-                detect = false;
+
+                if (LstBonus[indexObject] is CanonBallBonus)
+                {
+                    if ( (LstBonus[indexObject] as CanonBallBonus).StarteffectIA(this.transform)  )
+                    {
+                        detect = false;
+                    }
+                }
+                else
+                {
+                    
+                    LstBonus[indexObject].Starteffect(this.transform);
+                    detect = false;
+                }
+               
             }
            
             

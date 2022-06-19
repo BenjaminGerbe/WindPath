@@ -9,7 +9,6 @@ public class RaceMaping : EditorWindow
 {
     private Event e;
     public NavMeshPath NMP;
-    public Transform water;
 
     public MilesStoneIAScript MSIS;
     public List<Vector3> lstPointTarget;
@@ -87,7 +86,6 @@ public class RaceMaping : EditorWindow
     {
         MSIS = GameObject.FindObjectOfType<MilesStoneIAScript>();
         lstPointTarget = new List<Vector3>();
-        water = GameObject.FindGameObjectWithTag("Water").transform;
         Boats = GameObject.FindGameObjectsWithTag("Boat");
         NMP = new NavMeshPath();
         SceneView.duringSceneGui += this.OnScene;
@@ -115,13 +113,7 @@ public class RaceMaping : EditorWindow
     {
              
         if(e== null) return;
-
-        if (water == null)
-        {
-            water = GameObject.FindGameObjectWithTag("Water").transform;
-            
-            
-        }
+        
         
         float ppp = EditorGUIUtility.pixelsPerPoint;
         

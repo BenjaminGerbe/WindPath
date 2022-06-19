@@ -46,7 +46,11 @@ public class BoatControlleurScript : MonoBehaviour
         
     }
 
-    
+    public void Stuck()
+    {
+        RB.velocity = new Vector3(0, RB.velocity.y, 0);
+      
+    }
     
     private void Update()
     {
@@ -69,6 +73,7 @@ public class BoatControlleurScript : MonoBehaviour
 
         if (IBS.isAccelerate())
         {
+            Debug.Log("je passe");
             isAccelerate = true;
          
         }
