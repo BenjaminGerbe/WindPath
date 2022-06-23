@@ -21,12 +21,40 @@ public class CountTour : MonoBehaviour
     private GameObject lb;
     private RaceGestionScript rcs;
 
-    [HideInInspector]
     public int nbTour;
     public Collider[] Checkpoint;
+<<<<<<< HEAD
     private int lastCheckPoint;
+    public bool isFinish()
+    {
+        return finish;
+    }
+
+    public string getTime()
+    {
+        return this.RealRaceTime;
+    }
+    
+    public int getLastCheckpointpassed()
+    {
+        return lastCheckPoint;
+    }
+    
+    public int getTour()
+    {
+        return this.ActualTour;
+    }
+    
+    public float getCurrentTour()
+    {
+      
+        return ActualTour;
+    }
+=======
 
 
+>>>>>>> circuit
+    
     void Start()
     {
         lb = GameObject.Find("Racing Setup");
@@ -65,7 +93,7 @@ public class CountTour : MonoBehaviour
                 rcs.setFinish(this.gameObject);
                 if (GetComponent<InputBoatScript>())
                 {
-                    
+                    Debug.Log("finish");
                     GetComponent<InputBoatScript>().enabled = false;
                     IABoatScript IBS = this.gameObject.AddComponent<IABoatScript>();
                     IBS.WC = GameObject.FindObjectOfType<WindControl>();

@@ -1,27 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+public  struct Racer
+{
+    public string racer;
+
+    public int score;
+}
 
 public class RaceGestionScript : MonoBehaviour
 {
     /// <summary>
     /// Script fait par: Julien
-    /// Utilisé pour : classement joueurs
+    /// UtilisÃ© pour : classement joueurs
     /// </summary>
 
     public TextMeshProUGUI leader;
-    public GameObject leaderboardscreen;
+    public  GameObject leaderboardscreen;
     private Collider[] checkpoint;
     
     [SerializeField]
     private List<GameObject> racers;
-    
-    private bool[] finish;
+
+    private float countRacer = 0;
     private bool raceFinished = false;
     [SerializeField]
-    private List<GameObject> leaderboard = new List<GameObject>();
+    public static List<Racer> leaderboard;
     private GUIStyle Style = new GUIStyle();
     // Start is called before the first frame update
     void Start()
@@ -36,11 +44,23 @@ public class RaceGestionScript : MonoBehaviour
         {
             racers.Remove(GameObject.Find("Boat-IA (IA 5)"));
         }
-        finish = new bool[racers.Count];
-        for (int i = 0; i < finish.Length;i++)
+
+        if (leaderboard == null)
         {
-            finish[i] = false;
+            leaderboard = new List<Racer>();
+            foreach (GameObject GO  in racers)
+            {
+                Racer r = new Racer();
+                r.racer = GO.name;
+                leaderboard.Add(r);
+            }
+
         }
+        
+        
+    
+        
+        
     }
 
     // Update is called once per frame
@@ -52,14 +72,9 @@ public class RaceGestionScript : MonoBehaviour
         if (raceFinished)
         {
             GameObject.Find("EventSystem").GetComponent<PauseMenu>().enabled = false;
+            
             leaderboardscreen.SetActive(true);
             GameObject.Find("Return").GetComponent<UnityEngine.UI.Button>().Select();
-            string sld = "";
-            for (int i = 0; i < leaderboard.Count; i++)
-            {
-                sld+=i + 1 + " : " + leaderboard[i].name+"\n";
-            }
-            leader.text = sld;
         }
     }
 
@@ -68,26 +83,53 @@ public class RaceGestionScript : MonoBehaviour
         
     }
 
+    int findRacer(GameObject racer)
+    {
+        int i = 0;
+        bool trouver = false;
+
+        while (i < leaderboard.Count && !trouver)
+        {
+            if (racer.name == leaderboard[i].racer)
+            {
+                trouver = true;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        
+        
+        
+        return i;
+    }
+
     bool finishRace()
     {
-       if(leaderboard.Count==6)
-        {
-            return true;
-        }
-       else
-        {
-            return false;
-        }
+       if(countRacer >= racers.Count) return true;
+
+       return false;
     }
 
     public void setFinish(GameObject racer)
     {
-        int i = 0;
-        while(racers[i].name != racer.name)
+     
+
+        int i =  findRacer(racer);
+        Debug.Log("i :" + i  + " = "+RaceGestionScript.leaderboard.Count);
+        if (i >= 0 && i < leaderboard.Count)
         {
-            i++;
+            Debug.Log(i + " :: "+leaderboard.Count);
+            var racer1 = leaderboard[i];
+            racer1.score += racers.Count - ((int)countRacer );
+            
+            leaderboard[i] = racer1;
+            
+            leader.text += countRacer + 1 + " : " + racer.name+" score :" + leaderboard[i].score.ToString() +  "\n";
+            countRacer++;
         }
-        finish[i] = true;
-        leaderboard.Add(racers[i]);
+        
+    
     }
 }

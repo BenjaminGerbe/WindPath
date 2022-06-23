@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tricky_Circuit.unity
     guid: c51080a11ca22b64292758103edd82b7
+  - enabled: 1
+    path: Assets/Scenes/DashBoardMenu.unity
+    guid: d74f18889f0ac804995a48c4153a0647
   m_configObjects: {}

@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Script fait par: Julien
-/// Utilisé pour : gestion du menu principal
+/// UtilisÃ© pour : gestion du menu principal
 /// </summary>
 
 public class MainMenuScript : MonoBehaviour
@@ -17,11 +19,27 @@ public class MainMenuScript : MonoBehaviour
         Cursor.visible = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            
+            SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex +1)% (SceneManager.sceneCountInBuildSettings));
+        }
+    }
+
     public void QuitGame()
     {
         Application.Quit();
     }
 
+    public void NextLevel()
+    {
+       
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex +1)% (SceneManager.sceneCountInBuildSettings));
+        
+    }
+    
     public void LaunchSolo()
     {
         PlayerPrefs.SetString("GameType", "Solo");
@@ -43,7 +61,8 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(map);
     }
-
+    
+    
     public void ReturnToMenu()
     {
         Menu[0].SetActive(true);

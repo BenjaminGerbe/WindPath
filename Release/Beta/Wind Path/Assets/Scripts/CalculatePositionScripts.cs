@@ -36,13 +36,15 @@ public class CalculatePositionScripts : MonoBehaviour
     public ModePosition CalculationMethode;
     public Transform StartPosition;
     public Transform origin;
+    
     public List<BoatPosition> Boats;
- 
+
+    private GameObject[] _Boats;
 
     // Start is called before the first frame update
     void Start()
     {
-    
+
     }
 
 
@@ -79,6 +81,7 @@ public class CalculatePositionScripts : MonoBehaviour
             foreach (BoatPosition boat in Boats)
             {
                 var boatPosition = boat;
+       
                 Vector3 direction = (boatPosition.tr.position - this.origin.position).normalized;
                 Vector3 directionStart = (this.StartPosition.position - this.origin.position).normalized;
 
