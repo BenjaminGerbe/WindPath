@@ -13,7 +13,7 @@ public class RaceMaping : EditorWindow
     public MilesStoneIAScript MSIS;
     public List<Vector3> lstPointTarget;
     public GameObject[] Boats;
-
+    private bool loaded = false;
     public bool addTarget = false;
     Vector2 mousePos;
     
@@ -28,54 +28,61 @@ public class RaceMaping : EditorWindow
     void OnGUI () {
         // The actual window code goes here
         e = Event.current;
-        
-        EditorGUILayout.LabelField("Ajouter des target point pour les IA", EditorStyles.boldLabel);
-        EditorGUILayout.Space();
-        EditorGUILayout.BeginHorizontal();
-        if (GUILayout.Button("Add"))
+
+        if (loaded)
         {
+            EditorGUILayout.LabelField("Ajouter des target point pour les IA", EditorStyles.largeLabel);
+            EditorGUILayout.Space();
+            EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("Add"))
+            {
         
-            addTarget = true;
-        }
+                addTarget = true;
+            }
         
-        if (GUILayout.Button("Cancel"))
-        {
-            addTarget = false;
-        }
+            if (GUILayout.Button("Cancel"))
+            {
+                addTarget = false;
+            }
         
        
-        EditorGUILayout.EndHorizontal();
-        EditorGUILayout.Space();
-        EditorGUILayout.LabelField("Manage Points", EditorStyles.boldLabel);
-        EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Manage Points", EditorStyles.boldLabel);
+            EditorGUILayout.BeginHorizontal();
     
-        if (GUILayout.Button("Load"))
-        {
-
-            lstPointTarget = MSIS.positionMilesStones;
-        }
+            if (GUILayout.Button("Load"))
+            {
+                lstPointTarget = MSIS.positionMilesStones;
+            }
         
-        if (GUILayout.Button("RemoveLast"))
-        {
-            lstPointTarget.RemoveAt(lstPointTarget.Count-1);
-            Undo.RecordObject(this,"remove last");
-        }
+            if (GUILayout.Button("RemoveLast"))
+            {
+                lstPointTarget.RemoveAt(lstPointTarget.Count-1);
+                Undo.RecordObject(this,"remove last");
+            }
         
-        if (GUILayout.Button("Clear"))
-        {
-            lstPointTarget = new List<Vector3>();
-        }
+            if (GUILayout.Button("Clear"))
+            {
+                lstPointTarget = new List<Vector3>();
+            }
     
-        EditorGUILayout.EndHorizontal();
-        EditorGUILayout.Space();
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.Space();
       
         
-        if (GUILayout.Button("Bake"))
-        {
-            MSIS.positionMilesStones = lstPointTarget;
+            if (GUILayout.Button("Bake"))
+            {
+                MSIS.positionMilesStones = lstPointTarget;
+            }
+
+
         }
-        
-        
+        else
+        {
+            EditorGUILayout.LabelField("La carte n'est pas correctement chargé", EditorStyles.boldLabel);
+        }
+       
         
  
         
@@ -85,10 +92,19 @@ public class RaceMaping : EditorWindow
     private void OnEnable()
     {
         MSIS = GameObject.FindObjectOfType<MilesStoneIAScript>();
+
         lstPointTarget = new List<Vector3>();
         Boats = GameObject.FindGameObjectsWithTag("Boat");
         NMP = new NavMeshPath();
-        SceneView.duringSceneGui += this.OnScene;
+        
+        
+        if (MSIS != null || Boats!= null || NMP != null)
+        {
+            loaded = true;
+            
+            Debug.Log("test");
+            lstPointTarget = MSIS.positionMilesStones;
+        }
     }
     
     void OnFocus()

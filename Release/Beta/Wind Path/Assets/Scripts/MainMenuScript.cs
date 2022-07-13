@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject[] Menu;
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,13 +33,15 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
-
+    
+    
     public void NextLevel()
     {
        
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex +1)% (SceneManager.sceneCountInBuildSettings));
         
     }
+    
     
     public void LaunchSolo()
     {
@@ -47,7 +50,7 @@ public class MainMenuScript : MonoBehaviour
         Menu[1].SetActive(true);
         GameObject.Find("Circuit1").GetComponent<UnityEngine.UI.Button>().Select();
     }
-
+    
 
     public void LaunchMulti()
     {
@@ -56,7 +59,8 @@ public class MainMenuScript : MonoBehaviour
         Menu[1].SetActive(true);
         GameObject.Find("Circuit1").GetComponent<UnityEngine.UI.Button>().Select();
     }
-
+    
+    
     public void LaunchCircuit(int map)
     {
         SceneManager.LoadScene(map);
@@ -69,7 +73,7 @@ public class MainMenuScript : MonoBehaviour
         Menu[1].SetActive(false);
         GameObject.Find("Play_Solo").GetComponent<UnityEngine.UI.Button>().Select();
     }
-
+    
     public void returnToStart()
     {
         SceneManager.LoadScene(0);

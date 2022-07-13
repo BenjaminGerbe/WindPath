@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterRamp
+  m_Shader: {fileID: 4800000, guid: 4b943d4ada03f694587f94016cf788d9, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: b46e95ef2565a80418e009f4d19aa5f8, type: 3}
+        m_Scale: {x: 3.06, y: 1.34}
+        m_Offset: {x: -0.7, y: -7.98}
+    - _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TraceTexture:
+        m_Texture: {fileID: 8400000, guid: a7fa7a99189d9c14ca344316bff02f09, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterDis:
+        m_Texture: {fileID: 2800000, guid: 208ec551107fe334387dca54834f3cad, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _DeppValue: 23.47
+    - _DepthValue: 23.07
+    - _Foam: 0.18
+    - _FoamCOF: 1.6
+    - _FoamLineMaxDistance: 0.12
+    - _FoamLineMinDistance: 0.11
+    - _MirrorValue: 8.04
+    - _WaveAmont: 1
+    - _WaveHeight: 0.15
+    - _WaveSpeed: 1
+    m_Colors:
+    - _Color: {r: 0.25467247, g: 0.38464743, b: 0.9150943, a: 1}
+    - _DeepColor: {r: 0.7882353, g: 0.9254902, b: 0.88309926, a: 0.8}
+    - _FoamColor: {r: 0.24056602, g: 0.9050708, b: 1, a: 1}
+    - _FoamTint: {r: 0, g: 0, b: 0, a: 0}
+    - _SurfaceColor: {r: 0.7882353, g: 0.9254902, b: 0.8867924, a: 0.92156863}
+  m_BuildTextureStacks: []

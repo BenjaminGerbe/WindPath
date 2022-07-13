@@ -34,6 +34,7 @@ public class RaceGestionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        countRacer = 0;
         GameObject[] rac= GameObject.FindGameObjectsWithTag("Boat");
         racers = new List<GameObject>(rac);
         if (PlayerPrefs.HasKey("GameType") && PlayerPrefs.GetString("GameType") == "Solo")
@@ -107,6 +108,7 @@ public class RaceGestionScript : MonoBehaviour
 
     bool finishRace()
     {
+
        if(countRacer >= racers.Count) return true;
 
        return false;
@@ -115,12 +117,13 @@ public class RaceGestionScript : MonoBehaviour
     public void setFinish(GameObject racer)
     {
      
+    
 
         int i =  findRacer(racer);
-        Debug.Log("i :" + i  + " = "+RaceGestionScript.leaderboard.Count);
+        
         if (i >= 0 && i < leaderboard.Count)
         {
-            Debug.Log(i + " :: "+leaderboard.Count);
+        
             var racer1 = leaderboard[i];
             racer1.score += racers.Count - ((int)countRacer );
             
