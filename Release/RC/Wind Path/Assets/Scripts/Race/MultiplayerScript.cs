@@ -38,27 +38,30 @@ public class MultiplayerScript : MonoBehaviour
                 }
                 
             }
-            
-            
-           
-            tr = cam[1].transform.GetComponent<GetBoatInfo>().boat.transform;
-            
-            foreach (Transform t in tr)
-            {
 
-                CinemachineVirtualCamera g = t.GetComponent<CinemachineVirtualCamera>();
+
+            if (!cam[1].transform.GetComponent<GetBoatInfo>().boat)
+            {
                 
-                if (g != null)
+                
+                tr = cam[1].transform.GetComponent<GetBoatInfo>().boat.transform;
+                
+                foreach (Transform t in tr)
                 {
-                    Camera c = g.GetComponentInChildren<Camera>();
-                    c.rect = new Rect(0.5f, 0.0f, 1.0f, 1.0f);
+
+                    CinemachineVirtualCamera g = t.GetComponent<CinemachineVirtualCamera>();
+                    
+                    if (g != null)
+                    {
+                        Camera c = g.GetComponentInChildren<Camera>();
+                        c.rect = new Rect(0.5f, 0.0f, 1.0f, 1.0f);
+                        
+                    }
                     
                 }
-                
+            
+            
             }
-            
-            
-            
             
             
         }

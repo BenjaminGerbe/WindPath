@@ -25,10 +25,11 @@ Shader "Unlit/WaterShader"
     SubShader
     {
        Tags {"Queue"="Transparent" "RenderType"="Transparent"}
-        LOD 100
-
+      
         Pass
         {
+            LOD 600
+
             Blend SrcAlpha OneMinusSrcAlpha
            CGPROGRAM
             
@@ -56,7 +57,7 @@ Shader "Unlit/WaterShader"
 
             float GetWaterHeight(float3 pos)
             {
-                float func = unityTime.x *_WaveSpeed + (pos.x* pos.z*_WaveAmont);
+                float func = _Time.x *_WaveSpeed + (pos.x* pos.z*_WaveAmont);
                 float height = _WaveHeight * sin(func);
                 
                 return height;
@@ -67,7 +68,7 @@ Shader "Unlit/WaterShader"
 
                 v2f o;
                 float3 worldpos = mul(UNITY_MATRIX_M, v.vertex);
-                v.vertex.y += sin(unityTime.x*_WaveSpeed + (worldpos.x* worldpos.z*_WaveAmont)) *_WaveHeight;
+                v.vertex.y += sin(_Time.x*_WaveSpeed + (worldpos.x* worldpos.z*_WaveAmont)) *_WaveHeight;
                
           
                 v.vertex.y += GetWaterHeight(worldpos);
@@ -84,6 +85,7 @@ Shader "Unlit/WaterShader"
             }
             sampler2D _CameraDepthTexture;
            sampler2D _CameraNormalsTexture;
+           sampler2D _CameraColorScene;
            sampler2D _TraceTexture;
            sampler2D _MainTex;
            float4 _MainTex_ST;
@@ -125,20 +127,24 @@ Shader "Unlit/WaterShader"
 
                 float Depth01 = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenuv)).x;
                 float3 normals = tex2Dproj(_CameraNormalsTexture, UNITY_PROJ_COORD(i.screenuv));
+             
                float4 trace3 = tex2D(_TraceTexture, i.uv ).b;
                 
-
+                    
                 
                 float3 dis = tex2D(_WaterDis, i.uv * _WaterDis_ST.xy + _WaterDis_ST.zw + float2(1,1)*_Time.x);
                 float3 tex = tex2D(_MainTex, i.uv * _MainTex_ST.xy + _MainTex_ST.zw + (dis.x - dis.y + (trace3.x)*2)/20 );
            
              
               float4 trace = tex2D(_TraceTexture, i.uv + (dis.x - dis.y)/500 ).b;
+
+                float3 colorTex = tex2Dproj(_CameraColorScene, UNITY_PROJ_COORD(i.screenuv + (dis.x - dis.y) ));
                 
                 float3 normalDot = saturate(dot(i.normals,normals));
                 
                 
                 float Scenedepth = LinearEyeDepth(Depth01);
+                
                 float depth = saturate((Scenedepth - i.screenuv.w) / _DeppValue);
 
                 float _Foam = lerp(_FoamLineMinDistance,_FoamLineMaxDistance,normalDot);
@@ -159,7 +165,10 @@ Shader "Unlit/WaterShader"
                 col += (foamline.x * _FoamColor) ;
                 
                 trace = float4(trace.xxx,0) * _FoamColor;
+                
                 col += trace;
+
+                //col = float4(lerp(colorTex,col,col.w),1);
                 
                 
                 return col;

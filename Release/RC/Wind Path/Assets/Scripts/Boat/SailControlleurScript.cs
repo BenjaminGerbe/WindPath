@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 
 [RequireComponent(typeof(BoatControlleurScript))]
@@ -30,7 +31,7 @@ public class SailControlleurScript : MonoBehaviour
     public Vector3 AxeSail()
     {
         var position = SAIL.forward;
-        return new Vector3(position.x,0, position.z); // A CHANGER CA AUSSI;
+        return -SAIL.right; // A CHANGER CA AUSSI;
 
     }
     
@@ -46,21 +47,31 @@ public class SailControlleurScript : MonoBehaviour
 
     public float calculangle()
     {
-        
-        var position = SAIL.forward; // CHANGER L AXE PLUS TARD 
-        var position1 = Bateau.forward;
+
+        var position = Vector3.ProjectOnPlane( -SAIL.right,Bateau.up).normalized; // CHANGER L AXE PLUS TARD 
+        var position1 = Vector3.ProjectOnPlane( Bateau.forward , Bateau.up).normalized;
+
+
+  
+   
         float  Angle = Vector2.Angle(new Vector2(position.x,position.z),new Vector2(position1.x,position1.z));
         
         return Angle;
     }
 
 
-    
+    private void Update()
+    {
+        var localEulerAngles = SAIL.localEulerAngles;
+        SAIL.transform.localRotation = Quaternion.Euler(-90,localEulerAngles.y,localEulerAngles.z);
+    }
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+      
+         
         
         Angle = calculangle();
         
@@ -69,30 +80,40 @@ public class SailControlleurScript : MonoBehaviour
             oldRotate = SAIL.transform.rotation;
         }
         
-        if ( IBS.isSailTurningRight() > 0)
+        if ( IBS.isSailTurningRight() > 0 && Angle <= 90)
         {
             Quaternion basicRoation = Bateau.transform.rotation;
             Bateau.transform.rotation = Quaternion.identity;
-            SAIL.transform.RotateAround(SAIL.transform.position,SAIL.transform.up,-RotateSpeed * Time.fixedDeltaTime * IBS.isSailTurningRight());
-
+            
+            
+           
+            SAIL.transform.RotateAround(Bateau.transform.position,SAIL.transform.forward,-RotateSpeed * Time.fixedDeltaTime * IBS.isSailTurningRight());
+            
             Bateau.transform.rotation = basicRoation;
 
         }
-        
-        
-        if ( IBS.isSailTurningLeft() > 0)
+    
+        if ( IBS.isSailTurningLeft() > 0 &&  Angle <= 90)
         {
             Quaternion basicRoation = Bateau.transform.rotation;
             Bateau.transform.rotation = Quaternion.identity;
-            SAIL.transform.RotateAround(SAIL.transform.position,SAIL.transform.up,RotateSpeed * Time.fixedDeltaTime );
+            
+           
+            
+            SAIL.transform.RotateAround(Bateau.transform.position,SAIL.transform.forward,RotateSpeed * Time.fixedDeltaTime  * IBS.isSailTurningLeft());
+            
             Bateau.transform.rotation = basicRoation;
         }
+    
+        
 
         
         Angle = calculangle();
 
         if (Angle > 90)
         {
+      
+        
             SAIL.transform.rotation = oldRotate;
         }
         

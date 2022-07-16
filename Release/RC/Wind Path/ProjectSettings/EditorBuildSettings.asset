@@ -9,14 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu.unity
     guid: e44674a6cea571b40b92cc647521bcdb
   - enabled: 1
-    path: Assets/Scenes/Courses/Test_Circuit.unity
+    path: Assets/Scenes/Courses/Arene_Aquatique.unity
     guid: 613dc25819b6e63458d9b3e16d6cd832
   - enabled: 1
-    path: Assets/Scenes/Courses/Tricky_Circuit.unity
+    path: Assets/Scenes/Courses/Riviere_sinueuse.unity
     guid: c51080a11ca22b64292758103edd82b7
   - enabled: 1
-    path: Assets/Scenes/Courses/Crossing_Circuit.unity
+    path: Assets/Scenes/Courses/Croissant_attrayant.unity
     guid: ca5996362d4c4a447917a7439ba5c9f1
+  - enabled: 1
+    path: Assets/Scenes/Courses/LaMontagne.unity
+    guid: c666fea1f9948b74fb05541ed0782c6d
+  - enabled: 1
+    path: Assets/Scenes/Courses/zigzag.unity
+    guid: 5ace39af190942f46887959e3a139f76
   - enabled: 1
     path: Assets/Scenes/DashBoardMenu.unity
     guid: d74f18889f0ac804995a48c4153a0647

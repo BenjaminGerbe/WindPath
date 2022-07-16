@@ -12,8 +12,18 @@ public class WindBonusHolder : MonoBehaviour,BonusObject
 
     public string NameOfBonus;
     private WindControl WC;
+    public Sprite Cover;
 
+    public Sprite getCover()
+    {
+        return this.Cover;
+    }
 
+    public void DisableEffect(Transform go)
+    {
+       
+
+    }
     
     private void Start()
     {

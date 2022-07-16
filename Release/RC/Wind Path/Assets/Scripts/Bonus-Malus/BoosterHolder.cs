@@ -12,8 +12,17 @@ public class BoosterHolder : MonoBehaviour,BonusObject
     public string NameOfBonus;
     public float TimerBoost;
     public float Speed;
+    public Sprite Cover;
+    
     private Rigidbody RB;
     
+ 
+
+    public Sprite getCover()
+    {
+        return this.Cover;
+    }
+
     
     private void Start()
     {
@@ -25,6 +34,12 @@ public class BoosterHolder : MonoBehaviour,BonusObject
         
     }
     
+    
+    public void DisableEffect(Transform go)
+    {
+       
+
+    }
     public void Starteffect(Transform go)
     {
         this.RB = go.gameObject.GetComponent<Rigidbody>();

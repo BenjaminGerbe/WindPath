@@ -23,7 +23,7 @@ public class CountTour : MonoBehaviour
     
     [HideInInspector]
     public int nbTour;
-    private Collider[] Checkpoint;
+    private List<Collider> Checkpoint;
     private int lastCheckPoint;
 
 
@@ -36,7 +36,7 @@ public class CountTour : MonoBehaviour
         Checkpoint = Checkpoints.GetComponent<Checkpoints>().Checkpoint;
         
      
-        allCheck = new bool[Checkpoint.Length];
+        allCheck = new bool[Checkpoint.Count];
       
         for (int i = 0; i < allCheck.Length;i++)
         {
@@ -51,6 +51,8 @@ public class CountTour : MonoBehaviour
     {
         if (other.name.Contains("finish line") && allTrue())
         {
+            Debug.Log("je suis rentré");
+      
             for (int i = 0; i < allCheck.Length; i++)
             {
                 allCheck[i] = false;
@@ -81,8 +83,9 @@ public class CountTour : MonoBehaviour
         else if (other.CompareTag("Checkpoint"))
         {
             int i;
+          
     
-            for (i = 0; i < Checkpoint.Length; i++)
+            for (i = 0; i < Checkpoint.Count; i++)
             {
                 
                 if (other.name == Checkpoint[i].name)
@@ -92,7 +95,7 @@ public class CountTour : MonoBehaviour
                 }
             }
             
-            if (i >= 0 && i < Checkpoint.Length)
+            if (i >= 0 && i < Checkpoint.Count)
             {
               
                 setTrue(i);

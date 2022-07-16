@@ -71,8 +71,11 @@ public class IABoatScript : InputClass
         calculateDirection();
         Debug.DrawLine(this.transform.position,this.transform.position + this.direction*5,Color.yellow);
 
-        float Angle =  Vector3.SignedAngle(this.transform.forward,direction,Vector3.up);
-
+        Vector3 a = Vector3.ProjectOnPlane(this.transform.forward, Vector3.up);
+        Vector3 b = Vector3.ProjectOnPlane(direction, Vector3.up);
+        
+        float Angle =  Vector3.SignedAngle(a,b,Vector3.up);
+        
         if (Angle > 10f)
         {
            return true;
@@ -87,8 +90,13 @@ public class IABoatScript : InputClass
         
         Debug.DrawLine(this.transform.position,this.transform.position + direction*5,Color.yellow);
         calculateDirection();
-        float Angle =  Vector3.SignedAngle(this.transform.forward,direction,Vector3.up);
-
+        
+        
+        Vector3 a = Vector3.ProjectOnPlane(this.transform.forward, Vector3.up);
+        Vector3 b = Vector3.ProjectOnPlane(direction, Vector3.up);
+        
+        float Angle =  Vector3.SignedAngle(a,b,Vector3.up);
+        
         if (Angle < -10f)
         {
             return true;
@@ -123,7 +131,9 @@ public class IABoatScript : InputClass
     
         
         float angle = Vector3.SignedAngle(WC.GetVectorWind(),direction,Vector3.up) -  90;
-
+    
+        
+ 
         
         if (angle < 0)
         {
@@ -149,7 +159,11 @@ public class IABoatScript : InputClass
         }
         
         
-        if (angle > 0)
+
+        
+        
+        
+        if (angle > 0f)
         {
        
             return 1f;

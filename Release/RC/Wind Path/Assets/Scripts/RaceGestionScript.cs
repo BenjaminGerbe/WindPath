@@ -10,6 +10,12 @@ public  struct Racer
     public string racer;
 
     public int score;
+
+    public void setScore(int i)
+    {
+        score = i;
+    }
+    
 }
 
 public class RaceGestionScript : MonoBehaviour
@@ -22,11 +28,12 @@ public class RaceGestionScript : MonoBehaviour
     public TextMeshProUGUI leader;
     public  GameObject leaderboardscreen;
     private Collider[] checkpoint;
-
+    
+    public static bool reset = true;
 
     public Transform allBoats;
     
-    private List<GameObject> racers;
+     public static List<GameObject> racers;
 
     private float countRacer = 0;
     private bool raceFinished = false;
@@ -58,8 +65,9 @@ public class RaceGestionScript : MonoBehaviour
             racers.Remove(GameObject.Find("Boat-IA (IA 5)"));
         }
 
-        if (leaderboard == null)
+        if (leaderboard == null || ( leaderboard != null &&  reset ) )
         {
+            reset = false;
             leaderboard = new List<Racer>();
             foreach (GameObject GO  in racers)
             {
@@ -71,10 +79,10 @@ public class RaceGestionScript : MonoBehaviour
         }
         
         
-    
-        
         
     }
+    
+    
 
     // Update is called once per frame
     void Update()
@@ -121,6 +129,8 @@ public class RaceGestionScript : MonoBehaviour
     bool finishRace()
     {
     
+        Debug.Log(countRacer);
+  
        if(countRacer >= racers.Count) return true;
 
        return false;

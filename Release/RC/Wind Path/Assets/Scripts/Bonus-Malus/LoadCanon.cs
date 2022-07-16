@@ -13,8 +13,6 @@ public class LoadCanon : MonoBehaviour
     }
     public void OpenRange()
     {
-    
-       
         range.gameObject.SetActive(true);
     }
     

@@ -13,22 +13,45 @@ public class BonusMalusHoldingIAScript : MonoBehaviour
     private List<BonusObject> LstBonus;
     
     private bool detect = false;
-    private bool effect = false;
 
+    
+    public void cancelBonus()
+    {
+        if (detect)
+        {
+            LstBonus[indexObject].DisableEffect(this.transform);
+        }
+        
+        detect = false;
+
+      
+        
+    }
+    
     private int indexObject;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Tonneau") && !detect)
         {
        
+     
             detect = true;
+        
             indexObject = Random.Range(0, LstBonus.Count);
+            
+            
             other.gameObject.GetComponentInParent<TonneauSpawnerScript>().Spawn();
+
             LstBonus[indexObject].LoadEffect(this.transform);
-            
-            
             Destroy(other.gameObject);
     
+        }
+        
+        
+        if (other.CompareTag("Tonneau") && detect)
+        {
+            other.gameObject.GetComponentInParent<TonneauSpawnerScript>().Spawn();
+            Destroy(other.gameObject);
         }
     }
 

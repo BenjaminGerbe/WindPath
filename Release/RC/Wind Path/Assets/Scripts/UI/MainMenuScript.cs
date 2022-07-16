@@ -19,8 +19,7 @@ public struct levelOfMenu
 
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject[] Menu;
-    
+
     public List<levelOfMenu> lstLOM;
 
     private int currentLevel = -1;
@@ -97,6 +96,13 @@ public class MainMenuScript : MonoBehaviour
         nextLevelMenu();
 
     }
+    
+    public void setDifficulty(int i)
+    {
+        PlayerPrefs.SetInt("Difficulty", i);
+        nextLevelMenu();
+    }
+    
 
     public void LaunchCircuit(int map)
     {

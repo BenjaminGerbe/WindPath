@@ -16,7 +16,8 @@ public class FlotterScript : MonoBehaviour
     public Transform Flotteur;
     public LayerMask WaterMask;
     public float offset = 15f;
-
+    public bool allign = false;
+    
     private Vector3 directionToFloat;
     private Vector3 FlooterPoint;
     
@@ -51,7 +52,7 @@ public class FlotterScript : MonoBehaviour
 
 
         directionToFloat = Vector3.Cross(Flotteur.right, FlooterPoint);
-        Debug.DrawRay(this.transform.position,directionToFloat*100f,Color.yellow);
+     
         if (Flotteur.position.y < value)
         {
             float v = (value - Flotteur.position.y) * 70;
@@ -59,10 +60,19 @@ public class FlotterScript : MonoBehaviour
         }
         else  if (Flotteur.position.y  > value + 1)
         {
-            Debug.Log(this.transform.name);
+         
             float v = (Flotteur.position.y - value ) * 20;
             RB.AddForce(new Vector3(-FlooterPoint.x * v, -FlooterPoint.y * v, -FlooterPoint.z * v));
         }
+
+        if (allign)
+        {
+            RB.transform.rotation = Quaternion.LookRotation(getNormalSurface(),RB.transform.up);     
+        }
+       
+        
+    
+        
     }
 
 

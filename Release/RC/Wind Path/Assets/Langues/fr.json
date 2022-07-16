@@ -1,0 +1,41 @@
+{
+  "Langue": "France",
+  
+  "libraryWordsKeys": [
+    "Solo",
+    "Multi",
+    "Option",
+    "Quit",
+    "Circuit",
+    "Arene1",
+    "Arene2",
+    "RetourMenu",
+    "SelectBat",
+    "Lancer",
+    "Retour",
+    "Qualt",
+    "Langues",
+    "Music",
+    "Sonore"
+  ],
+  
+  "libraryWords":[
+    "Solo",
+    "Multijoueur", 
+    "",
+    "Quitter",
+    "Sélectionner un Circuit",
+    "Arene Aquatique",
+    "Riviere Sinueuse",
+    "Retour au menu",
+    "Selectionner un bateau",
+    "Lancer",
+    "Retour",
+    "Qualité",
+    "Langues",
+    "Musique",
+    "Effets sonores"
+    
+  ]
+
+}

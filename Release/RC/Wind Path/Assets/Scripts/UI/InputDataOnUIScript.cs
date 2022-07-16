@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputDataOnUIScript : MonoBehaviour
 {
@@ -25,7 +26,9 @@ public class InputDataOnUIScript : MonoBehaviour
     public GameObject Pannel;
     public TextMeshProUGUI Position;
     public TextMeshProUGUI Time;
-
+    
+    [Header("Bonus")]
+    public Image ImgBonus;
 
     private RacingManager RM;
 

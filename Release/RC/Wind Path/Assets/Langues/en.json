@@ -1,0 +1,41 @@
+{
+  "Langue": "France",
+
+  "libraryWordsKeys": [
+    "Solo",
+    "Multi",
+    "Option",
+    "Quit",
+    "Circuit",
+    "Arene1",
+    "Arene2",
+    "RetourMenu",
+    "SelectBat",
+    "Lancer",
+    "Retour",
+    "Qualt",
+    "Langues",
+    "Music",
+    "Sonore"
+  ],
+
+  "libraryWords":[
+    "Solo",
+    "Multiplayer",
+    "",
+    "Quit",
+    "Select a Tour",
+    "Aquatic Arena",
+    "Winding River",
+    "Back to menu",
+    "Select a boat",
+    "Launch",
+    "Return",
+    "Quality",
+    "Languages",
+    "Music",
+    "Sound effects"
+
+  ]
+
+}

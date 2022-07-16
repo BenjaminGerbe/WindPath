@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct settingsBoats
@@ -24,6 +25,14 @@ public struct settingsBoats
     public GameObject Pannel;
     public TextMeshProUGUI Position;
     public TextMeshProUGUI Time;
+    
+    
+    
+    [Header("Bonus")]
+    public Image ImgBonus;
+    
+    
+    
 
     [Header("Conpenents")] [Header("UI -- end")]
     public CinemachineVirtualCamera CVC;
@@ -74,7 +83,7 @@ public class GestionSelectedBoat : MonoBehaviour
             } while (spawnBoat[d] == null);
             
             
-            GameObject go = Instantiate(CBS.Boats[currentBoat].Boat,spawnBoat[d].position , Quaternion.identity);
+            GameObject go = Instantiate(CBS.Boats[currentBoat].Boat,spawnBoat[d].position , spawnBoat[d].transform.rotation);
         
             
             
@@ -86,7 +95,8 @@ public class GestionSelectedBoat : MonoBehaviour
             
             Set.CVC.GetComponentInParent<GetBoatInfo>().boat = go;
 
-
+            
+            
 
 
 
@@ -114,7 +124,8 @@ public class GestionSelectedBoat : MonoBehaviour
             g.Pannel = Set.Pannel;
             g.Position = Set.Position;
             g.Time = Set.Time;
-            g.Time = Set.Time;
+            g.ImgBonus = Set.ImgBonus;
+           
             
             
             ArrowScript[] ar = go.GetComponents<ArrowScript>();

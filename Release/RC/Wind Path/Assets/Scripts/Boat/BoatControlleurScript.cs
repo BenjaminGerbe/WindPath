@@ -11,7 +11,11 @@ public class BoatControlleurScript : MonoBehaviour
     /// Script fait par : Benjamin
     /// Utilisé pour : Déplacer le bateau
     /// </summary>
-    /// 
+    ///
+
+
+    public SailControlleurScript SCS;
+    
     [Header("Components")] 
     public Transform Boat;
     public InputClass IBS;
@@ -38,19 +42,20 @@ public class BoatControlleurScript : MonoBehaviour
 
     private float PourcentageRotation;
     private IABoatScript IBSia;
-
-    private bool SwitchInterior;
+    
     private bool SwitchBackCamera;
     private GameObject cam;
     
     // Start is called before the first frame update
     void Start()
     {
-
-        
-    
         RB = GetComponent<Rigidbody>();
         
+    }
+
+    public float Speed()
+    {
+        return  Mathf.Abs((transform.InverseTransformDirection(RB.velocity).magnitude));
     }
 
     public void Stuck()
@@ -83,10 +88,6 @@ public class BoatControlleurScript : MonoBehaviour
          
         }
 
-        if (IBS.InteriorCamera())
-        {
-            SwitchInterior = true;
-        }
         
 
 
@@ -118,7 +119,7 @@ public class BoatControlleurScript : MonoBehaviour
         }
         
         RB.velocity = Vector3.ClampMagnitude(RB.velocity, MaxVitesse);
-  
+
 
         
         PourcentageRotation = Mathf.Clamp01(   Mathf.Abs(RB.angularVelocity.y));

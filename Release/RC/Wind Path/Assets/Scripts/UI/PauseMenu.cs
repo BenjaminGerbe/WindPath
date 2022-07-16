@@ -39,6 +39,15 @@ public class PauseMenu : MonoBehaviour
     public void QuitRace()
     {
         Time.timeScale = 1.0f;
+        
+        if (RaceGestionScript.leaderboard != null)
+        {
+            RaceGestionScript.reset = true;
+        }
+        
         SceneManager.LoadScene(0);
+        
+      
+        
     }
 }

@@ -110,7 +110,8 @@ public class CalculatePositionScripts : MonoBehaviour
             {
                 int CTour = boat.tr.GetComponent<CountTour>().getTour() - 1;
                 int CCheck = boat.tr.GetComponent<CountTour>().getLastCheckpointpassed();
-                Collider[] check = GameObject.Find("Checkpoints").GetComponent<Checkpoints>().Checkpoint;
+                List<Collider> check = GameObject.Find("Checkpoints").GetComponent<Checkpoints>().Checkpoint;
+                Debug.Log(check);
                 float distance = 0;
                 if (CCheck+1 > check.Count()-1)
                 {

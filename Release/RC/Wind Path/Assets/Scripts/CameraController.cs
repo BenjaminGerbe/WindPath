@@ -74,7 +74,7 @@ public class CameraController : MonoBehaviour
         
         
         Sail.layer = getIndexOfLayer(LMSAIL);
-        Sail.transform.GetChild(0).gameObject.layer = getIndexOfLayer(LMSAIL);
+
 
     }
 

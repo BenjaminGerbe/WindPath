@@ -11,12 +11,25 @@ public class BonusMalusHoldingScript : MonoBehaviour
 {
 
     public int onlyindex = -1;
+    public InputDataOnUIScript IDS;
     
     private List<BonusObject> LstBonus;
     
     private bool detect = false;
     private bool effect = false;
 
+
+    public void cancelBonus()
+    {
+        if (detect)
+        {
+            LstBonus[indexObject].DisableEffect(this.transform);
+        }
+        IDS.ImgBonus.enabled = false;
+        detect = false;
+        effect = false;
+    }
+    
     private int indexObject;
     private void OnTriggerEnter(Collider other)
     {
@@ -31,12 +44,23 @@ public class BonusMalusHoldingScript : MonoBehaviour
             {
                 indexObject = onlyindex;
             }
+
+            IDS.ImgBonus.enabled = true;
+            IDS.ImgBonus.sprite = LstBonus[indexObject].getCover();
             
             other.gameObject.GetComponentInParent<TonneauSpawnerScript>().Spawn();
-
+   
             LstBonus[indexObject].LoadEffect(this.transform);
             Destroy(other.gameObject);
+            
+            
     
+        }
+
+        if (other.CompareTag("Tonneau") && detect)
+        {
+            other.gameObject.GetComponentInParent<TonneauSpawnerScript>().Spawn();
+            Destroy(other.gameObject);
         }
     }
 
@@ -69,7 +93,7 @@ public class BonusMalusHoldingScript : MonoBehaviour
 
             if (effect )
             {
-             
+                IDS.ImgBonus.enabled = false;
                 LstBonus[indexObject].Starteffect(this.transform);
                 effect = false;
                 

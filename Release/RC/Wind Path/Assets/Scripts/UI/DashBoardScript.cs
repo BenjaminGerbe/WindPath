@@ -11,6 +11,7 @@ public class DashBoardScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (RaceGestionScript.leaderboard != null)
         {
             int i = 0;
@@ -22,9 +23,12 @@ public class DashBoardScript : MonoBehaviour
                 TMPGUI.text += i + 1 + " : " + Rcr.racer +" score :" + Rcr.score.ToString() +  "\n";
                 i++;
             }
-            
- 
+
+            RaceGestionScript.reset = true;
+
         }
+        
+        
              
     }
 

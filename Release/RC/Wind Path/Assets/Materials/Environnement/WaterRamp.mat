@@ -44,12 +44,12 @@ Material:
     - _FoamLineMinDistance: 0.11
     - _MirrorValue: 8.04
     - _WaveAmont: 1
-    - _WaveHeight: 0.15
+    - _WaveHeight: 0.0003
     - _WaveSpeed: 1
     m_Colors:
     - _Color: {r: 0.25467247, g: 0.38464743, b: 0.9150943, a: 1}
-    - _DeepColor: {r: 0.7882353, g: 0.9254902, b: 0.88309926, a: 0.8}
-    - _FoamColor: {r: 0.24056602, g: 0.9050708, b: 1, a: 1}
+    - _DeepColor: {r: 1, g: 1, b: 1, a: 0.78431374}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.7294118}
     - _FoamTint: {r: 0, g: 0, b: 0, a: 0}
-    - _SurfaceColor: {r: 0.7882353, g: 0.9254902, b: 0.8867924, a: 0.92156863}
+    - _SurfaceColor: {r: 0.7372549, g: 0.88235295, b: 0.90588236, a: 0.7058824}
   m_BuildTextureStacks: []

@@ -53,13 +53,16 @@ public class RaceMaping : EditorWindow
     
             if (GUILayout.Button("Load"))
             {
+               
                 lstPointTarget = MSIS.positionMilesStones;
+                EditorUtility.SetDirty(MSIS);
                 UpdateDraw();
             }
         
             if (GUILayout.Button("RemoveLast"))
             {
                 lstPointTarget.RemoveAt(lstPointTarget.Count-1);
+                
                 Undo.RecordObject(this,"remove last");
                 UpdateDraw();
             }
@@ -77,6 +80,7 @@ public class RaceMaping : EditorWindow
             if (GUILayout.Button("Bake"))
             {
                 MSIS.positionMilesStones = lstPointTarget;
+                EditorUtility.SetDirty(MSIS);
             }
 
 
@@ -134,7 +138,9 @@ public class RaceMaping : EditorWindow
         {
             for (int i = 0; i < lstPointTarget.Count; i++)
             {
-
+                
+               
+                
                 Handles.color = Color.red;
                 Handles.DrawWireDisc(lstPointTarget[i], Vector3.up, 3f);
 
@@ -169,11 +175,11 @@ public class RaceMaping : EditorWindow
       
         
   
-        
+        UpdateDraw();
         
         if (lstPointTarget.Count > 0 && Boats.Length > 0)
         {
-            UpdateDraw();
+           
             
             
             for (int j = 0; j < Boats.Length; j++)
@@ -239,14 +245,18 @@ public class RaceMaping : EditorWindow
         
         
         
+        
+        
+        
     }
 
 
     public void TraceLine( Color c, bool straight)
     {
-        for (int i = 0; i < NMP.corners.Length - 1; i++){
-               
-                
+        for (int i = 0; i < NMP.corners.Length - 1; i++)
+        {
+
+
             Handles.color = c;
 
             if (straight)
