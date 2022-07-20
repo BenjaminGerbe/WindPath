@@ -92,6 +92,21 @@ public class CameraController : MonoBehaviour
         {
             InterCamera = true;
         }
+        
+   
+        
+            
+        if (BackCamera)
+        {
+            BackCamera = false;
+            Camera.cullingMask = LMBasic;
+            CameraBack.SetActive(true);
+        }
+        else
+        {
+            CameraBack.SetActive(false);
+        }
+        
     }
 
     // Update is called once per frame
@@ -118,16 +133,6 @@ public class CameraController : MonoBehaviour
         
         
    
-        if (CameraBack) 
-        {
-            CameraBack.SetActive(false);
-            if (BackCamera)
-            {
-                BackCamera = false;
-                Camera.cullingMask = LMBasic;
-                CameraBack.SetActive(true);
-            }
-        }
 
     }
 }

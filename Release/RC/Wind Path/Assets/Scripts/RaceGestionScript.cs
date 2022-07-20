@@ -42,7 +42,7 @@ public class RaceGestionScript : MonoBehaviour
     public static List<Racer> leaderboard;
     private GUIStyle Style = new GUIStyle();
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
 
         racers = new List<GameObject>();
@@ -52,17 +52,17 @@ public class RaceGestionScript : MonoBehaviour
             racers.Add(Tr.gameObject);
         }
         
-        
+    
         countRacer = 0;
         GameObject[] rac= GameObject.FindGameObjectsWithTag("Boat");
         racers = new List<GameObject>(rac);
         if (PlayerPrefs.HasKey("GameType") && PlayerPrefs.GetString("GameType") == "Solo")
         {
-            racers.Remove(GameObject.Find("BP-1(player 2)"));
+            racers.Remove(GameObject.Find("Player2"));
         }
         else
         {
-            racers.Remove(GameObject.Find("Boat-IA (IA 5)"));
+            racers.Remove(GameObject.Find("IA 5"));
         }
 
         if (leaderboard == null || ( leaderboard != null &&  reset ) )
@@ -77,8 +77,8 @@ public class RaceGestionScript : MonoBehaviour
             }
 
         }
-        
-        
+       
+ 
         
     }
     
@@ -111,6 +111,7 @@ public class RaceGestionScript : MonoBehaviour
 
         while (i < leaderboard.Count && !trouver)
         {
+
             if (racer.name == leaderboard[i].racer)
             {
                 trouver = true;
@@ -120,7 +121,11 @@ public class RaceGestionScript : MonoBehaviour
                 i++;
             }
         }
-        
+
+        if (!trouver)
+        {
+            return -1;
+        }
         
         
         return i;
@@ -128,7 +133,7 @@ public class RaceGestionScript : MonoBehaviour
 
     bool finishRace()
     {
-        
+        Debug.Log(countRacer +">="+ nbOfBoat);
        if(countRacer >= nbOfBoat) return true;
 
        return false;
@@ -140,7 +145,7 @@ public class RaceGestionScript : MonoBehaviour
     
 
         int i =  findRacer(racer);
-        
+       
         if (i >= 0 && i < leaderboard.Count)
         {
         

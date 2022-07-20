@@ -11137,7 +11137,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400671365}
-  m_LocalRotation: {x: 0.002322074, y: -0.001246893, z: 0.000634809, w: 0.9999964}
+  m_LocalRotation: {x: 0.0023260897, y: -0.0012490617, z: 0.0006359072, w: 0.9999963}
   m_LocalPosition: {x: 0.37000048, y: -48.118286, z: 0.000029921532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11364,7 +11364,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 70
+    FieldOfView: 71.99997
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -14115,7 +14115,7 @@ MonoBehaviour:
     LayerName: Player 1
     LayerBasic:
       serializedVersion: 2
-      m_Bits: 13815
+      m_Bits: 30199
     LayerInterior:
       serializedVersion: 2
       m_Bits: 9719
@@ -14142,7 +14142,7 @@ MonoBehaviour:
     LayerName: Player 2
     LayerBasic:
       serializedVersion: 2
-      m_Bits: 14839
+      m_Bits: 47607
     LayerInterior:
       serializedVersion: 2
       m_Bits: 6647
@@ -23034,7 +23034,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821556784}
-  m_LocalRotation: {x: 0.23295094, y: 0.0017426191, z: -0.00041923512, w: 0.9724869}
+  m_LocalRotation: {x: 0.23295096, y: 0.0017455736, z: -0.00041995023, w: 0.97248685}
   m_LocalPosition: {x: 52.267975, y: -50.529984, z: -13.081397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -24865,7 +24865,7 @@ GameObject:
   - component: {fileID: 879504202}
   - component: {fileID: 879504204}
   - component: {fileID: 879504203}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61465,7 +61465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1907524055}
   - component: {fileID: 1907524056}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: CM vcam2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61508,7 +61508,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 71.09998
+    FieldOfView: 90
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000

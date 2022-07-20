@@ -73,7 +73,7 @@ public class MainMenuScript : MonoBehaviour
     {
         if (lstLOM.Count > 0)
         {
-            Debug.Log("frero");
+         
             currentLevel = (currentLevel+1) % lstLOM.Count;
 
             lstLOM.ForEach(x =>  x.Panel.SetActive(false));

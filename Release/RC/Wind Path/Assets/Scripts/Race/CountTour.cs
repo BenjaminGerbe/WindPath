@@ -64,6 +64,7 @@ public class CountTour : MonoBehaviour
             } 
             if (ActualTour > nbTour && !finish)
             {
+       
                 finish = true;
                 rcs.setFinish(this.gameObject);
                 if (GetComponent<InputBoatScript>())
