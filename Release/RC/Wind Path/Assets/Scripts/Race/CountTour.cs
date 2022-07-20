@@ -84,8 +84,8 @@ public class CountTour : MonoBehaviour
         else if (other.CompareTag("Checkpoint"))
         {
             int i;
-          
-    
+
+            
             for (i = 0; i < Checkpoint.Count; i++)
             {
                 

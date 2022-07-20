@@ -133,7 +133,7 @@ public class RaceGestionScript : MonoBehaviour
 
     bool finishRace()
     {
-        Debug.Log(countRacer +">="+ nbOfBoat);
+       
        if(countRacer >= nbOfBoat) return true;
 
        return false;
