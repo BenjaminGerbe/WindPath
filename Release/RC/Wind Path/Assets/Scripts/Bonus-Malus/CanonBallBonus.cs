@@ -7,7 +7,9 @@ public class CanonBallBonus : MonoBehaviour,BonusObject
 
     public string NameOfBonus;
     public float TimeOfStuck = 3f;
+    public float durationSplash;
     public Sprite Cover;
+ 
 
     public Sprite getCover()
     {
@@ -58,6 +60,12 @@ public class CanonBallBonus : MonoBehaviour,BonusObject
             }
 
             
+            ParticleSystem p = r.getDetectedBoat().GetComponentInChildren<ParticleSystem>();
+            if (p != null)
+            {
+                StartCoroutine(Splash(p,p.transform.GetChild(0)));      
+            }
+          
             StartCoroutine(Stuck());
         }
         
@@ -67,7 +75,6 @@ public class CanonBallBonus : MonoBehaviour,BonusObject
     {
      
         Range r =   go.GetComponent<LoadCanon>().range;
-            
         r.Detect();
         
         if ( r.getDetectedBoat() != null)
@@ -87,7 +94,10 @@ public class CanonBallBonus : MonoBehaviour,BonusObject
             {
                 BMSIA.cancelBonus();
             }
-            
+
+            ParticleSystem p =  r.getDetectedBoat().GetComponentInChildren<ParticleSystem>();
+         
+            StartCoroutine(Splash(p,p.transform.GetChild(0)));
             StartCoroutine(Stuck());
             
             return true;
@@ -95,8 +105,34 @@ public class CanonBallBonus : MonoBehaviour,BonusObject
 
         return false;
     }
-    
-    
+
+
+    IEnumerator Splash(ParticleSystem PS,Transform go)
+    {
+        float count = this.durationSplash;
+        var emissionModule = PS.emission;
+
+        
+        emissionModule.rateOverTime = 0;
+        while (count >= 0 )
+        {
+            count -= Time.deltaTime;
+            
+            emissionModule.rateOverTime = 250;
+            go.gameObject.SetActive(true);
+            
+            if (count < 0)
+            {
+                emissionModule.rateOverTime = 0;
+                go.gameObject.SetActive(false);
+            }
+          
+            
+            
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
     IEnumerator Stuck()
     {
         float count = this.TimeOfStuck;
@@ -105,9 +141,14 @@ public class CanonBallBonus : MonoBehaviour,BonusObject
         {
             count -= Time.deltaTime;
           
-      
-            BCS.Stuck();
             
+            BCS.Stuck();
+
+            if (count < 0)
+            {
+                BCS.setStuck(false);
+            }
+
             yield return new WaitForFixedUpdate();
         }
     }

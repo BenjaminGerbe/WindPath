@@ -92,7 +92,7 @@ public class GestionSelectedBoat : MonoBehaviour
             spawnBoat[d] = null;
             
             go.transform.SetParent(this.transform);
-            
+            go.name = Set.playerPrefName;
             Set.CVC.GetComponentInParent<GetBoatInfo>().boat = go;
 
             

@@ -16,7 +16,14 @@
     "Qualt",
     "Langues",
     "Music",
-    "Sonore"
+    "Sonore",
+    "nxtlevel",
+    "Arene3",
+    "Arene4",
+    "Arene5",
+    "Activer",
+    "Disactiver"
+
   ],
   
   "libraryWords":[
@@ -34,8 +41,13 @@
     "Qualité",
     "Langues",
     "Musique",
-    "Effets sonores"
-    
+    "Effets sonores",
+    "niveau cuivant",
+    "Riviere Sinueuse",
+    "Riviere Sinueuse",
+    "Riviere Sinueuse",
+    "Activer",
+    "Désactiver"
   ]
 
 }

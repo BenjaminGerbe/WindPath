@@ -26,18 +26,24 @@ public class LanguageManager : MonoBehaviour
     static public int currentLangue = 1;
     
     
-    public List<TextAsset> lstJsonPath;
+     public List<TextAsset> lstJsonPath;
 
-    private List<UILanguage> lstLanguage;
+     private List<UILanguage> lstLanguage;
     
     // Start is called before the first frame update
     void Awake()
     {
+        
+            
+        
         lstLanguage = new List<UILanguage>();
         foreach (TextAsset TA in lstJsonPath)
         {
             lstLanguage.Add(JsonUtility.FromJson<UILanguage>(TA.text));
         }
+        
+        
+        
         
         
         currentLangue = PlayerPrefs.GetInt("Langue");
@@ -63,8 +69,13 @@ public class LanguageManager : MonoBehaviour
                 i++;
             }
         }
-        
-        
+
+        if (trouver == false)
+        {
+            Debug.LogError("la clé "+key + " n'a pas été trouvé");
+        }
+
+
         return lstLanguage[currentLangue].libraryWords[i];
     }
     

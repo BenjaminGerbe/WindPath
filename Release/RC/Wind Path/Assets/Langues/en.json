@@ -1,5 +1,5 @@
 {
-  "Langue": "France",
+  "Langue": "English",
 
   "libraryWordsKeys": [
     "Solo",
@@ -16,7 +16,14 @@
     "Qualt",
     "Langues",
     "Music",
-    "Sonore"
+    "Sonore",
+    "nxtlevel",
+    "Arene3",
+    "Arene4",
+    "Arene5",
+    "Activer",
+    "Disactiver"
+  
   ],
 
   "libraryWords":[
@@ -34,8 +41,14 @@
     "Quality",
     "Languages",
     "Music",
-    "Sound effects"
-
+    "Sound effects",
+    "Next level",
+    "Riviere Sinueuse",
+    "Riviere Sinueuse",
+    "Riviere Sinueuse",
+    "Enable",
+    "Disable"
+    
   ]
 
 }

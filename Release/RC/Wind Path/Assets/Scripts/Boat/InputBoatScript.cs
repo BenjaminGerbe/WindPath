@@ -9,6 +9,7 @@ public enum ControllMethod
     Keyboard,
     Controller,
 }
+
 public  class InputBoatScript : InputClass, BoatInput.IBateauActions
 {
     /// <summary>
@@ -18,10 +19,13 @@ public  class InputBoatScript : InputClass, BoatInput.IBateauActions
     ///
     [SerializeField]
     public BoatInput control;
-
+    
+    
     public ControllMethod _ControllMethod;
-
+    
+    
     private bool interieurCamera = false;
+    
     
     private void OnEnable()
     {

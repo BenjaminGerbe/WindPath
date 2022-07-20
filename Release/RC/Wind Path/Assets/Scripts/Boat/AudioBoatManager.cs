@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 [RequireComponent(typeof(BoatControlleurScript))]
@@ -17,8 +19,9 @@ public class AudioBoatManager : MonoBehaviour
     
     public AudioSource Acceleration;
     public AudioSource Sail;
+    public AudioSource Cannon;
 
-
+    private bool shot = false;
     private float countTour = 0;
     private InputClass IBS;
     private BoatControlleurScript BCS;
@@ -29,6 +32,8 @@ public class AudioBoatManager : MonoBehaviour
         BCS = GetComponent<BoatControlleurScript>();
         IBS = GetComponent<BoatControlleurScript>().IBS;
     }
+    
+
 
     // Update is called once per frame
     void Update()
@@ -44,17 +49,29 @@ public class AudioBoatManager : MonoBehaviour
             countTour -= 1f  * Time.deltaTime;
         }
 
-
-        if ( (IBS.isSailTurningLeft() > 0 || IBS.isSailTurningRight() > 0) && !Sail.isPlaying)
+        if (BCS.isStuck() && Cannon != null && !Cannon.isPlaying && !shot)
         {
-    
+            Cannon.Play();
+            shot = true;
+
+
+        }
+        else if (!BCS.isStuck())
+        {
+            shot = false;
+        }
+        
+        if ( (IBS.isSailTurningLeft() > 0 || IBS.isSailTurningRight() > 0) && !Sail.isPlaying )
+        {
+           
             Sail.Play();
             Sail.pitch = Random.Range(1f, 1.2f);
         }
         
+        
         countTour = Mathf.Clamp(countTour, 0, 1);
         
-        Acceleration.pitch = Mathf.Lerp(0, 1,countTour);
+        Acceleration.pitch = Mathf.Lerp(1, 2,countTour);
         
     }
 }

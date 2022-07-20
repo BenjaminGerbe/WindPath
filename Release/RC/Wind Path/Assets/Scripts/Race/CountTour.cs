@@ -51,7 +51,7 @@ public class CountTour : MonoBehaviour
     {
         if (other.name.Contains("finish line") && allTrue())
         {
-            Debug.Log("je suis rentré");
+   
       
             for (int i = 0; i < allCheck.Length; i++)
             {

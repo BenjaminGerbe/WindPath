@@ -13,6 +13,7 @@ public class TonneauSpawnerScript : MonoBehaviour
     [Header("Compenent")]
     public GameObject Tonneau;
 
+    public AudioSource AS;
     public float Timer = 10f;
     
     private bool spawn = false;
@@ -34,6 +35,11 @@ public class TonneauSpawnerScript : MonoBehaviour
    
        
         
+    }
+
+    public void startEffect()
+    {
+        AS.Play();
     }
 
     // Update is called once per frame

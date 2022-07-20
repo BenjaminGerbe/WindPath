@@ -38,7 +38,7 @@ public class IaDifficultyLoader : MonoBehaviour
         }
         else
         {
-            Debug.Log("hallo");
+            
             BS.moveSpeed =  Normal.moveSpeed;
             BS.torqueSpeed = Normal.torqueSpeed;
             BS.MaxVitesse = Normal.MaxVitesse;

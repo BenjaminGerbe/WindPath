@@ -1,0 +1,5 @@
+newmtl Water_3
+map_Kd texture_eau.png
+Kd 1.0 1.0 1.0
+d 1.0
+

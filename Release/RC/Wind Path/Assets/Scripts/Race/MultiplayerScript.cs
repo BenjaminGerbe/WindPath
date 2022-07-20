@@ -40,9 +40,6 @@ public class MultiplayerScript : MonoBehaviour
             }
 
 
-            if (!cam[1].transform.GetComponent<GetBoatInfo>().boat)
-            {
-                
                 
                 tr = cam[1].transform.GetComponent<GetBoatInfo>().boat.transform;
                 
@@ -53,6 +50,7 @@ public class MultiplayerScript : MonoBehaviour
                     
                     if (g != null)
                     {
+                    
                         Camera c = g.GetComponentInChildren<Camera>();
                         c.rect = new Rect(0.5f, 0.0f, 1.0f, 1.0f);
                         
@@ -60,8 +58,7 @@ public class MultiplayerScript : MonoBehaviour
                     
                 }
             
-            
-            }
+                
             
             
         }

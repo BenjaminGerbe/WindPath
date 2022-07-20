@@ -7,9 +7,13 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Script fait par: Julien
+/// Script fait par: Julien et benjamin
 /// Utilisé pour : gestion du menu principal
 /// </summary>
+///
+
+
+
 [Serializable]
 public struct levelOfMenu
 {
@@ -20,13 +24,15 @@ public struct levelOfMenu
 public class MainMenuScript : MonoBehaviour
 {
 
+     
+    
     public List<levelOfMenu> lstLOM;
 
     private int currentLevel = -1;
+    private int currentCircuit = 1;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+ 
         nextLevelMenu();
     }
 
@@ -55,11 +61,19 @@ public class MainMenuScript : MonoBehaviour
         
     }
 
+    public void ChooseCircuit(int i)
+    {
+     
+        currentCircuit = i;
+        nextLevelMenu();
+    }
+
 
     public void nextLevelMenu()
     {
         if (lstLOM.Count > 0)
         {
+            Debug.Log("frero");
             currentLevel = (currentLevel+1) % lstLOM.Count;
 
             lstLOM.ForEach(x =>  x.Panel.SetActive(false));
@@ -104,9 +118,9 @@ public class MainMenuScript : MonoBehaviour
     }
     
 
-    public void LaunchCircuit(int map)
+    public void LaunchCircuit()
     {
-        SceneManager.LoadScene(map);
+        SceneManager.LoadScene(currentCircuit);
     }
     
     

@@ -14,7 +14,9 @@ public class NavigationBoatScript : MonoBehaviour
     public ControllMethod CM;
     public Transform PosBoats;
     public TextMeshProUGUI TitleBateau;
-    
+    public TextMeshProUGUI DescriptionUI;
+    public string[] DescriptionFR;
+    public string[] DescriptionEN;
     
     private ChoiceBoatScript CBS;
     private List<GameObject> boats;
@@ -65,6 +67,15 @@ public class NavigationBoatScript : MonoBehaviour
         }
         
         boats[currentSelectedBoat].SetActive(true);
+        if (LanguageManager.currentLangue == 0)
+        {
+         
+            DescriptionUI.text = DescriptionFR[currentSelectedBoat];
+        }
+        else
+        {
+            DescriptionUI.text = DescriptionEN[currentSelectedBoat];
+        }
 
         TitleBateau.text = boats[currentSelectedBoat].name;
         

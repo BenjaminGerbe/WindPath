@@ -39,12 +39,15 @@ public class BoatControlleurScript : MonoBehaviour
     private bool isAccelerate;
     private bool IsTurningLeft;
     private bool IsTurningRight;
-
+    private bool stuck = false;
+    
     private float PourcentageRotation;
     private IABoatScript IBSia;
     
     private bool SwitchBackCamera;
     private GameObject cam;
+    
+    
     
     // Start is called before the first frame update
     void Start()
@@ -53,6 +56,16 @@ public class BoatControlleurScript : MonoBehaviour
         
     }
 
+    public bool isStuck()
+    {
+        return this.stuck;
+    }
+
+    public void setStuck(bool n)
+    {
+        this.stuck = n;
+    }
+    
     public float Speed()
     {
         return  Mathf.Abs((transform.InverseTransformDirection(RB.velocity).magnitude));
@@ -60,6 +73,7 @@ public class BoatControlleurScript : MonoBehaviour
 
     public void Stuck()
     {
+        stuck = true;
         RB.velocity = new Vector3(0, RB.velocity.y, 0);
       
     }

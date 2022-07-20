@@ -128,8 +128,7 @@ public class RaceGestionScript : MonoBehaviour
 
     bool finishRace()
     {
-    
-        Debug.Log(countRacer);
+        
   
        if(countRacer >= racers.Count) return true;
 

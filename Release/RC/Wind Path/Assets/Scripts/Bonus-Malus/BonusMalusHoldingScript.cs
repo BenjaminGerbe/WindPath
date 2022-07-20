@@ -10,8 +10,9 @@ using Random = UnityEngine.Random;
 public class BonusMalusHoldingScript : MonoBehaviour
 {
 
-    public int onlyindex = -1;
+    public string onlyindex ;
     public InputDataOnUIScript IDS;
+    public AudioSource AS;
     
     private List<BonusObject> LstBonus;
     
@@ -33,23 +34,33 @@ public class BonusMalusHoldingScript : MonoBehaviour
     private int indexObject;
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Tonneau"))
+        {
+            other.gameObject.GetComponentInParent<TonneauSpawnerScript>().startEffect();
+        }
+        
+
+        
         if (other.CompareTag("Tonneau") && !detect)
         {
        
             detect = true;
-        
+            
             indexObject = Random.Range(0, LstBonus.Count);
             
-            if (onlyindex >= 0)
+            if (onlyindex != "")
             {
-                indexObject = onlyindex;
+                do
+                {
+                    indexObject = Random.Range(0, LstBonus.Count);
+                } while (LstBonus[indexObject].getName() != onlyindex);
             }
-
+            
             IDS.ImgBonus.enabled = true;
             IDS.ImgBonus.sprite = LstBonus[indexObject].getCover();
             
             other.gameObject.GetComponentInParent<TonneauSpawnerScript>().Spawn();
-   
+     
             LstBonus[indexObject].LoadEffect(this.transform);
             Destroy(other.gameObject);
             
@@ -96,7 +107,11 @@ public class BonusMalusHoldingScript : MonoBehaviour
                 IDS.ImgBonus.enabled = false;
                 LstBonus[indexObject].Starteffect(this.transform);
                 effect = false;
-                
+
+                if (LstBonus[indexObject].getName() == "Canon")
+                {
+                    AS.Play();
+                }
 
             }
         }

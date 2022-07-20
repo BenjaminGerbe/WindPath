@@ -1,25 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoloNavigation : MonoBehaviour
 {
+    public GameObject go;
+    
     // Start is called before the first frame update
     void Start()
     {
        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        if (PlayerPrefs.HasKey("GameType") && PlayerPrefs.GetString("GameType")=="Solo")
+        if (PlayerPrefs.GetString("GameType")=="Solo")
         {
-            this.gameObject.SetActive(false);
+            go.gameObject.SetActive(false);
         }
         else
         {
-            this.gameObject.SetActive(true);
+            go.gameObject.SetActive(true);
         }
     }
+
+
+
 }

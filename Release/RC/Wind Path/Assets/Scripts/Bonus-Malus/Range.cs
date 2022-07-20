@@ -13,7 +13,9 @@ public class Range : MonoBehaviour
     public Color Detectedcolor;
     public float RangeCanon = 10f;
     public float AngleCanon = 30f;
-
+    public Shader shd;
+    
+    
     private GameObject detectedBoat;
     private GameObject[] Boats;
     private bool detectBoat;
@@ -29,7 +31,7 @@ public class Range : MonoBehaviour
     { 
      
         Boats = GameObject.FindGameObjectsWithTag("Boat");
-        coneMat = new Material(Shader.Find("Unlit/Cone"));
+        coneMat = new Material(shd);
 
         MR.material = coneMat;
     }
