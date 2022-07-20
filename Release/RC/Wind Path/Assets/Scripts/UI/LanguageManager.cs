@@ -27,8 +27,9 @@ public class LanguageManager : MonoBehaviour
     
     
      public List<TextAsset> lstJsonPath;
-
-     private List<UILanguage> lstLanguage;
+    
+     [HideInInspector]
+     public List<UILanguage> lstLanguage;
     
     // Start is called before the first frame update
     void Awake()
@@ -74,8 +75,9 @@ public class LanguageManager : MonoBehaviour
         {
             Debug.LogError("la clé "+key + " n'a pas été trouvé");
         }
+        
 
-
+        
         return lstLanguage[currentLangue].libraryWords[i];
     }
     

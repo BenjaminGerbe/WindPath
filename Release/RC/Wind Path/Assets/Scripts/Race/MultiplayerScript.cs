@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -9,9 +10,13 @@ public class MultiplayerScript : MonoBehaviour
     public List<Camera> cam;
     
     public GameObject boat ;
- 
-    
-    
+
+    private void Awake()
+    {
+     
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,10 +72,10 @@ public class MultiplayerScript : MonoBehaviour
             cam[0].rect = new Rect(0.0f, 0.0f, 2.0f, 1.0f);
             Transform tr = cam[0].transform.GetComponent<GetBoatInfo>().boat.transform;
             
-            
+          
             cam[1].gameObject.SetActive(false);
+     
             
-         
         }
     }
 }

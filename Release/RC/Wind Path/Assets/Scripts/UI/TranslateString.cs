@@ -22,6 +22,7 @@ public class TranslateString : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(Key);
         t.text = LM.getStringByKey(Key);
     }
 }

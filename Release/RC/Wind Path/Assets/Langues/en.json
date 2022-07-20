@@ -22,7 +22,11 @@
     "Arene4",
     "Arene5",
     "Activer",
-    "Disactiver"
+    "Disactiver",
+    "Moyen",
+    "Faible",
+    "Fleches",
+    "Joystick"
   
   ],
 
@@ -43,11 +47,15 @@
     "Music",
     "Sound effects",
     "Next level",
-    "Riviere Sinueuse",
-    "Riviere Sinueuse",
-    "Riviere Sinueuse",
+    "Greedy crossbreed",
+    "The sleeping mountain",
+    "Deceitful Serpent",
     "Enable",
-    "Disable"
+    "Disable",
+    "Midium",
+    "Low",
+    "Choose with the arrows",
+    "Choose with the joystick"
     
   ]
 

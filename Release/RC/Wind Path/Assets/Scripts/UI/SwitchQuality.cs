@@ -6,6 +6,7 @@ using UnityEngine;
 public class SwitchQuality : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public LanguageManager LM;
     
     private bool low = false;
     private bool hight = true;
@@ -19,14 +20,14 @@ public class SwitchQuality : MonoBehaviour
        
       if (d == 0)
       {
-          text.text = "faible";
+          text.text = LM.getStringByKey("Faible");
           low = true;
           hight = false;
           QualitySettings.SetQualityLevel(0);
       }
       else
       {
-          text.text = "moyen";
+          text.text = LM.getStringByKey("Moyen");
           low = false;
           hight = true;
           QualitySettings.SetQualityLevel(2);
@@ -48,7 +49,7 @@ public class SwitchQuality : MonoBehaviour
         if (low)
         {
             QualitySettings.SetQualityLevel(0);
-            text.text = "faible";
+            text.text = LM.getStringByKey("Faible");
             PlayerPrefs.SetInt("Quality",0);
         }
         
@@ -57,7 +58,7 @@ public class SwitchQuality : MonoBehaviour
         if (hight)
         {
             QualitySettings.SetQualityLevel(2);
-            text.text = "moyen";
+            text.text = LM.getStringByKey("Moyen");
             PlayerPrefs.SetInt("Quality",2);
         }
         

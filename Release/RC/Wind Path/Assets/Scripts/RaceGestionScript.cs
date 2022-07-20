@@ -30,7 +30,7 @@ public class RaceGestionScript : MonoBehaviour
     private Collider[] checkpoint;
     
     public static bool reset = true;
-
+    public int nbOfBoat =  6;
     public Transform allBoats;
     
      public static List<GameObject> racers;
@@ -42,7 +42,7 @@ public class RaceGestionScript : MonoBehaviour
     public static List<Racer> leaderboard;
     private GUIStyle Style = new GUIStyle();
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
         racers = new List<GameObject>();
@@ -129,8 +129,7 @@ public class RaceGestionScript : MonoBehaviour
     bool finishRace()
     {
         
-  
-       if(countRacer >= racers.Count) return true;
+       if(countRacer >= nbOfBoat) return true;
 
        return false;
     }

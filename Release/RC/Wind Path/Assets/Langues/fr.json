@@ -22,7 +22,11 @@
     "Arene4",
     "Arene5",
     "Activer",
-    "Disactiver"
+    "Disactiver",
+    "Moyen",
+    "Faible",
+    "Fleches",
+    "Joystick"
 
   ],
   
@@ -43,11 +47,16 @@
     "Musique",
     "Effets sonores",
     "niveau cuivant",
-    "Riviere Sinueuse",
-    "Riviere Sinueuse",
-    "Riviere Sinueuse",
+    "Croisement cupide",
+    "La montagne endormie",
+    "Serpent fourbe",
     "Activer",
-    "Désactiver"
+    "Désactiver",
+    "Moeyn",
+    "Faible",
+    "Choisir avec les flèches",
+    "Choisir avec le joystick"
+    
   ]
 
 }

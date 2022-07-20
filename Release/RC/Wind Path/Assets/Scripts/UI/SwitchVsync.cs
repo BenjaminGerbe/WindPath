@@ -6,6 +6,7 @@ using UnityEngine;
 public class SwitchVsync : MonoBehaviour
 {
     public TextMeshProUGUI t;
+    public LanguageManager LM;
     private bool enable = true;
     
     // Start is called before the first frame update
@@ -24,12 +25,12 @@ public class SwitchVsync : MonoBehaviour
         if (d == 0)
         {
             enable = false;
-            t.text = "désactiver";
+            t.text = LM.getStringByKey("Disactiver");
         }
         else
         {
             enable = true;
-            t.text = "activer";
+            t.text = LM.getStringByKey("Activer");
         }
     
     }
@@ -41,14 +42,14 @@ public class SwitchVsync : MonoBehaviour
             QualitySettings.vSyncCount = 1;
             enable = true;
             PlayerPrefs.SetInt("Vsync",2);
-            t.text = "activer";
+            t.text = LM.getStringByKey("Activer");
         }
         else
         {
             QualitySettings.vSyncCount = 0;
             enable = false;
             PlayerPrefs.SetInt("Vsync",0);
-            t.text = "désactivier";
+            t.text = LM.getStringByKey("Disactiver");
         }
       
     }
