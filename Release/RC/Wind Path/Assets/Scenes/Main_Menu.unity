@@ -5764,7 +5764,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 189777454}
+    m_SelectOnUp: {fileID: 1556277841}
     m_SelectOnDown: {fileID: 2037777770}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -6646,7 +6646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1345512224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7380,8 +7380,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 189777454}
-    m_SelectOnDown: {fileID: 2037777770}
+    m_SelectOnUp: {fileID: 1807111929}
+    m_SelectOnDown: {fileID: 1556277841}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -7513,8 +7513,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 189777454}
-    m_SelectOnDown: {fileID: 2037777770}
+    m_SelectOnUp: {fileID: 1541345530}
+    m_SelectOnDown: {fileID: 1164412227}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -9321,7 +9321,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 189777454}
-    m_SelectOnDown: {fileID: 2037777770}
+    m_SelectOnDown: {fileID: 1541345530}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -9792,7 +9792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1900914525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10517,7 +10517,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1807111929}
+    m_SelectOnUp: {fileID: 1164412227}
     m_SelectOnDown: {fileID: 189777454}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
