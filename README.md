@@ -6,6 +6,9 @@
 
 	flèche directionnelle pour diriger le bateau,
 	A et E pour orienter la voile
+	Z pour lancer un object
+	I pour passer en camera interieure
+	ESPACE pour passer en caméra arrière
 
 
 ###### Manette (joueur 2):
