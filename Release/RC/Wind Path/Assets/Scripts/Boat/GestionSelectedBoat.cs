@@ -164,6 +164,7 @@ public class GestionSelectedBoat : MonoBehaviour
             Set.CVC.Follow = go.transform;
             Set.CVC.LookAt = go.transform;
             
+            go.GetComponent<BonusMalusHoldingScript>()._ControllMethod = Set.CM;
 
             Set.CVCback.Follow = go.transform;
             Set.CVCback.LookAt = go.transform;

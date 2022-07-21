@@ -13,6 +13,7 @@ public class BonusMalusHoldingScript : MonoBehaviour
     public string onlyindex ;
     public InputDataOnUIScript IDS;
     public AudioSource AS;
+    public ControllMethod _ControllMethod;
     
     private List<BonusObject> LstBonus;
     
@@ -96,7 +97,8 @@ public class BonusMalusHoldingScript : MonoBehaviour
     {
         if (LstBonus.Count >=2)
         {
-            if (Input.GetButtonDown("Fire1") && detect)
+            if ( ( (Input.GetButtonDown("Fire1") && _ControllMethod == ControllMethod.Keyboard) && detect) ||
+                ( (Input.GetButtonDown("Fire1C") && _ControllMethod == ControllMethod.Controller) && detect))
             { 
                 effect = true;
                 detect = false;

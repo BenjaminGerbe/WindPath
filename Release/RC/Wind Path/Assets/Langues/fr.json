@@ -26,7 +26,8 @@
     "Moyen",
     "Faible",
     "Fleches",
-    "Joystick"
+    "Joystick",
+    "Facile"
 
   ],
   
@@ -52,10 +53,11 @@
     "Serpent fourbe",
     "Activer",
     "Désactiver",
-    "Moeyn",
+    "Moyen",
     "Faible",
     "Choisir avec les flèches",
-    "Choisir avec le joystick"
+    "Choisir avec le joystick",
+    "Facile"
     
   ]
 

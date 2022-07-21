@@ -26,7 +26,9 @@
     "Moyen",
     "Faible",
     "Fleches",
-    "Joystick"
+    "Joystick",
+    "Facile",
+    "Moyen"
   
   ],
 
@@ -52,11 +54,11 @@
     "Deceitful Serpent",
     "Enable",
     "Disable",
-    "Midium",
+    "Medium",
     "Low",
     "Choose with the arrows",
-    "Choose with the joystick"
-    
+    "Choose with the joystick",
+    "Easy"
   ]
 
 }
