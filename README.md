@@ -37,7 +37,7 @@
 	
 ###### Boulet : 
 
-	Lance un boulet sur un éniment, le stun pendant 3 secondes
+	Lance un boulet sur un ennemi, le stun pendant 3 secondes
 
 
 ![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://gerbe-benjamin.fr/ezgif-3-79b781652d))
